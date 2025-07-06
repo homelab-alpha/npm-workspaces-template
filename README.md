@@ -1,5 +1,7 @@
 # Homelab-Alpha
 
+[![CodeQL](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql)
+
 Welcome to the Homelab-Alpha NPM Workspaces Template Repository!
 
 This project is a **Work in Progress (WIP)** template for Node.js projects
