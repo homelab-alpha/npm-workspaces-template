@@ -1,0 +1,57 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/Amsterdam",
+  "schedule": "before 5am every weekday",
+  "extends": [
+    "config:recommended",
+    "schedule:weekly",
+    "group:allNonMajor",
+    ":automergeMinor",
+    ":automergePatch"
+  ],
+  "assignees": [""],
+  "rangeStrategy": "auto",
+  "ignoreDeps": [],
+  "semanticCommits": "enabled",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "major"],
+      "automerge": false,
+      "automergeType": "squash"
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "labels": ["dependencies", "minor"],
+      "automerge": false,
+      "automergeType": "squash"
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "labels": ["dependencies", "patch"],
+      "automerge": false,
+      "automergeType": "squash"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dev", "dependencies", "major"],
+      "automerge": false,
+      "automergeType": "squash"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor"],
+      "labels": ["dev", "dependencies", "minor"],
+      "automerge": false,
+      "automergeType": "squash"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch"],
+      "labels": ["dev", "dependencies", "patch"],
+      "automerge": true,
+      "automergeType": "squash"
+    }
+  ]
+}
