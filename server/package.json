@@ -1,0 +1,19 @@
+{
+  "name": "npm-workspaces-template-server",
+  "version": "0.1.0",
+  "description": "NPM Workspaces Template Server",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/homelab-alpha/npm-workspaces-template.git"
+  },
+  "author": "Homelab-Alpha <@gmail.com> ( GJS )",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/homelab-alpha/npm-workspaces-template/issues"
+  },
+  "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme"
+}
