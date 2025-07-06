@@ -1,0 +1,9 @@
+# GitLeaks ignore
+
+## GitHub Workspace
+
+### /github/workspace/
+
+## Super Linter Local
+
+### /tmp/lint/
