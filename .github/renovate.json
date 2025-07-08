@@ -13,6 +13,11 @@
   "rangeStrategy": "auto",
   "ignoreDeps": [],
   "semanticCommits": "enabled",
+  "excludeCommitPaths": [
+    "docker/compose.build.yml",
+    "docker/compose.prod.yml",
+    "docker/compose.test.yml"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
