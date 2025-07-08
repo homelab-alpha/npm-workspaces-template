@@ -1,0 +1,53 @@
+# STAGE 1: Base & Dependencies
+FROM node:22.17.0-slim AS base
+
+# Set the working directory.
+WORKDIR /app
+
+# Copy the package.json files from the root and the workspaces.
+# Doing this in separate layers makes optimal use of the Docker cache.
+# If only the source code changes, 'npm ci' does not need to run again.
+COPY package.json package-lock.json* ./
+COPY client/package.json ./client/
+COPY server/package.json ./server/
+
+# Install all dependencies for all workspaces.
+# "npm ci" is faster and more reliable for builds.
+RUN npm ci
+
+# Copy the entire source code of the project.
+COPY . .
+
+# STAGE 2: Build
+# This stage builds the client application (Vue.js).
+FROM base AS builder
+
+# Run the build script for the 'client' workspace.
+RUN npm run build --workspace=client
+
+# STAGE 3: Production
+FROM node:22.17.0-slim AS production
+
+# Set the working directory.
+WORKDIR /app
+
+# Copy the package.json files from the 'base' stage.
+COPY --from=base /app/package.json /app/package-lock.json* ./
+COPY --from=base /app/client/package.json ./client/
+COPY --from=base /app/server/package.json ./server/
+
+# Install only the production dependencies to keep the image small.
+RUN npm ci --omit=dev
+
+# Copy the built client files from the 'builder' stage.
+COPY --from=builder /app/client/dist ./client/dist
+
+# Copy the server files.
+COPY --from=builder /app/server ./server
+
+# Set the PORT environment variable. Adjust this if your server uses a different port.
+ENV PORT=3210
+EXPOSE 3210
+
+# The command to start the server.
+CMD [ "node", "server/index.js" ]
