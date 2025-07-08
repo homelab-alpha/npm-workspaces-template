@@ -29,6 +29,17 @@ to disclose the vulnerability publicly until we have had a chance to address it.
 **Collaboration:** We will work with you to understand and resolve the issue.
 Once the issue is resolved, we will acknowledge your contribution.
 
+**Confidentiality**: The information you provide in the GitHub Security Advisory
+will initially remain confidential. However, once the vulnerability is addressed,
+the advisory will be publicly disclosed on GitHub.
+
+**Access and Visibility**: Until the advisory is published, it will only be
+visible to the maintainers of the repository and invited collaborators.
+
+**Credit**: You will be automatically credited as a contributor for identifying
+and reporting the vulnerability. Your contribution will be reflected in the
+MITRE Credit System.
+
 ## General Security Guidelines
 
 - **Dependencies:** Keep all project dependencies up-to-date to minimize known
