@@ -3,10 +3,10 @@
 ## Introduction
 
 This guide helps contributors understand how we write code in the NPM
-Workspaces Template. We use **npm workspaces** for a **Node.js** project,
-splitting it into a `client` (Vue.js) and `server` (Express.js, TypeScript) part,
-with **Docker** for easy setup. Following these guidelines keeps our code
-consistent and easy to manage.
+Workspaces Template repository. We use **npm workspaces** for a **Node.js**
+project, splitting it into a `client` (Vue.js) and `server` (Express.js,
+TypeScript) part, with **Docker** for easy setup. Following these guidelines
+keeps our code consistent and easy to manage.
 
 ## Our Main Guidelines
 
@@ -80,7 +80,39 @@ Since we use TypeScript, Vue.js, and Node.js:
 
 These guidelines ensure our commit history is clean and easy to follow.
 
-### Commit Message Guidelines
+## Branch Naming Guidelines
+
+Name your branches to clearly describe their purpose.
+
+- **Format**: `type/short-description`
+- **Case**: Use **lowercase** letters, separate words with **hyphens**.
+- **Prefixes (Types)**:
+  - `feat/`: New features.
+  - `fix/`: Bug fixes.
+  - `docs/`: Documentation.
+  - `refactor/`: Code restructuring.
+  - `chore/`: General tasks.
+  - `hotfix/`: Urgent production fixes.
+- **Description**: Be specific and brief. Avoid vague names. Aim for
+  under 50 characters.
+
+### Examples of Valid Branch Names
+
+```none
+feat/add-user-authentication
+fix/login-page-display-error
+chore/update-dependencies
+```
+
+### Invalid Branch Names
+
+```none
+login-error-fix  (missing type)
+bug123           (too vague)
+Feature/AddUserAuth (wrong casing)
+```
+
+## Commit Message Guidelines
 
 Always write commit messages in **English**.
 
@@ -121,36 +153,4 @@ feat(flatpak): improve error handling
 
 - Adjusted Flatpak configuration for better system compatibility.
 - Enhanced error reporting with more detailed logs.
-```
-
-## Branch Naming Guidelines
-
-Name your branches to clearly describe their purpose.
-
-- **Format**: `type/short-description`
-- **Case**: Use **lowercase** letters, separate words with **hyphens**.
-- **Prefixes (Types)**:
-  - `feat/`: New features.
-  - `fix/`: Bug fixes.
-  - `docs/`: Documentation.
-  - `refactor/`: Code restructuring.
-  - `chore/`: General tasks.
-  - `hotfix/`: Urgent production fixes.
-- **Description**: Be specific and brief. Avoid vague names. Aim for
-  under 50 characters.
-
-### Examples of Valid Branch Names
-
-```none
-feat/add-user-authentication
-fix/login-page-display-error
-chore/update-dependencies
-```
-
-### Invalid Branch Names
-
-```none
-login-error-fix  (missing type)
-bug123           (too vague)
-Feature/AddUserAuth (wrong casing)
 ```
