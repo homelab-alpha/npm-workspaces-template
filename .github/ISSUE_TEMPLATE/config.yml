@@ -1,0 +1,24 @@
+---
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussions
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions
+    about: Discuss general topics and ask questions.
+  - name: 📣 Announcements
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/announcements
+    about: Stay updated with the latest news and announcements.
+  - name: 🎯 Feedback
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/feedback
+    about: Share your suggestions and feedback to help us improve.
+  - name: 💬 General
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/general
+    about: For general conversations that don't fit into another category.
+  - name: 💡 Ideas
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/ideas
+    about: Share your ideas for new features and improvements.
+  - name: 🗳️ Polls
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/polls
+    about: Participate in polls and give your opinion.
+  - name: 🙏 Q&A
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/q-a
+    about: Ask specific questions and get answers from the community.
