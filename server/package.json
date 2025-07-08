@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/homelab-alpha/npm-workspaces-template/issues"
   },
-  "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme"
+  "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme",
+  "dependencies": {
+    "express-rate-limit": "^7.5.1"
+  }
 }
