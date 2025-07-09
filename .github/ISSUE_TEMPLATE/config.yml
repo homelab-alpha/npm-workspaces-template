@@ -1,9 +1,6 @@
 ---
 blank_issues_enabled: false
 contact_links:
-  - name: 💬 General Discussions
-    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions
-    about: Discuss general topics and ask questions.
   - name: 📣 Announcements
     url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/announcements
     about: Stay updated with the latest news and announcements.
