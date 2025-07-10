@@ -3,19 +3,22 @@ blank_issues_enabled: false
 contact_links:
   - name: 📣 Announcements
     url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/announcements
-    about: Stay updated with the latest news and announcements.
+    about: Stay up to date with important updates, releases, and news directly from the maintainers.
+  - name: ✨ Feature Request
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/feature-request
+    about: Got an idea for a new feature or an improvement? Share it here! We’d love to hear your suggestions to make this project even better.
   - name: 🎯 Feedback
     url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/feedback
-    about: Share your suggestions and feedback to help us improve.
-  - name: 💬 General
-    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/general
-    about: For general conversations that don't fit into another category.
-  - name: 💡 Ideas
-    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/ideas
-    about: Share your ideas for new features and improvements.
+    about: We value your input! Share your thoughts and suggestions to help us improve and enhance your experience with this project.
+  - name: 💬 General Discussion
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/general-discussion
+    about: This is the place for all off-topic conversations! Chat about anything and everything let's keep it friendly and fun.
+  - name: ❓ Help & Support
+    url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/help-support
+    about: Have a question or need assistance with this repository? Post it here! Whether it's about setup, usage, or troubleshooting, the community and maintainers are here to help.
   - name: 🗳️ Polls
     url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/polls
-    about: Participate in polls and give your opinion.
+    about: Have a question you want the community to weigh in on? Create a poll and get everyone's opinion!
   - name: 🙏 Q&A
     url: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/q-a
-    about: Ask specific questions and get answers from the community.
+    about: Got a question? Post it here and get answers from the community. Whether it's about the project or related topics, we’re all here to help!
