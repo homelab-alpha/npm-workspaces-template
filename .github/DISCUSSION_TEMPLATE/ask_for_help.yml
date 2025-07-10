@@ -1,6 +1,4 @@
 ---
-name: ❓ Ask for help
-description: Submit a question related to this repository.
 labels: ["help", "P3: low"]
 body:
   - type: checkboxes

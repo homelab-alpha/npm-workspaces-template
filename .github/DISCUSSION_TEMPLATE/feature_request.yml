@@ -1,9 +1,5 @@
 ---
-name: 🚀 Feature Request
-description: Propose a new feature or improvement for this repository.
 labels: ["feature request", "P4: negligible"]
-assignees:
-  - homelab-alpha
 body:
   - type: textarea
     id: related-issues
