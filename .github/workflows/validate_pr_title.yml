@@ -22,15 +22,15 @@ jobs:
         with:
           # Configure which types are allowed (newline-delimited). Only lowercase letters.
           types: |
-            feat:
-            fix:
-            docs:
-            style:
-            refact:
-            perf:
-            test:
-            chore:
-            revert:
+            feat
+            fix
+            docs
+            style
+            refact
+            perf
+            test
+            chore
+            revert
           # Configure which scopes are allowed (newline-delimited). Only lowercase letters.
           scopes: |
             [a-z]*
