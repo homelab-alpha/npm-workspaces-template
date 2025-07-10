@@ -1,6 +1,6 @@
 ---
 name: 🐛 Bug Report
-description: Report a bug or issue in this repository.
+description: Encounter a bug or issue with this project? Report it here, and we'll investigate and resolve it as soon as possible!
 labels: ["bug", "P2: moderate"]
 assignees:
   - homelab-alpha
