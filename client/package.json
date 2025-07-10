@@ -9,16 +9,17 @@
     "node": "22.17.0"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "test:e2e": "playwright test",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "dev": "vite",
+    "format:check": "prettier --check src/.",
     "format": "prettier --write src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --fix",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "test:unit": "vitest",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type-check": "vue-tsc --build"
   },
   "repository": {
     "type": "git",

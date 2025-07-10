@@ -8,6 +8,8 @@
     "node": "22.17.0"
   },
   "scripts": {
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +24,9 @@
   "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme",
   "dependencies": {
     "express-rate-limit": "^7.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "prettier": "^3.6.2"
   }
 }
