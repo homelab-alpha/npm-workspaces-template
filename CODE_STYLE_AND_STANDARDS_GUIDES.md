@@ -90,7 +90,7 @@ Name your branches to clearly describe their purpose.
   - `feat/`: New features.
   - `fix/`: Bug fixes.
   - `docs/`: Documentation.
-  - `refactor/`: Code restructuring.
+  - `refact/`: Code restructuring.
   - `chore/`: General tasks.
   - `hotfix/`: Urgent production fixes.
 - **Description**: Be specific and brief. Avoid vague names. Aim for
@@ -123,7 +123,7 @@ Always write commit messages in **English**.
     - `fix`: Bug fix.
     - `docs`: Documentation changes.
     - `style`: Code formatting (no logic change).
-    - `refactor`: Code restructuring (no feature/fix).
+    - `refact`: Code restructuring (no feature/fix).
     - `perf`: Performance improvements.
     - `test`: Test updates.
     - `chore`: General maintenance, build updates.
