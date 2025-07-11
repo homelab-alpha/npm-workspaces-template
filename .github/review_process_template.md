@@ -81,7 +81,7 @@ request. Explain what **problems** it solves, what **features** it adds, or what
 **improvements** it brings. Briefly describe how these changes contribute to the
 `npm-workspaces-template` project.
 
-For an example, please follow the [Pull Request Template](./pull_request_template.md?plain=1).
+For an example, please follow the [Pull Request Template](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/.github/pull_request_template.md?plain=1).
 
 ### Code Review Focus Areas
 
@@ -108,7 +108,7 @@ Be as precise as possible.
 - `Step 4:` To manually verify the new date formatting, start the development
   server in the `server` directory: `cd server && npm run dev`
 - `Step 5:` Then, start the development client in the `client` directory:
-  `cd client && npm run dev`. Open your browser and go to `http://localhost:3210`
+  `cd client && npm run dev`. Open your browser and go to [http://localhost:3210](http://localhost:3210)
   to observe the date display on the homepage.
 
 ### Impact and Risks
