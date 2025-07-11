@@ -95,7 +95,7 @@ To get the project up and running locally using Docker Compose for development:
    ```
 
 3. **Access the application**:
-   The application should be accessible in your web browser at `http://localhost:3210`.
+   The application should be accessible in your web browser at [http://localhost:3210](http://localhost:3210).
 
 ### Running Tests (with Docker Compose)
 
