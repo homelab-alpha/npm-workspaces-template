@@ -205,7 +205,7 @@ Provide your answer below:
 REQUIRED: Select all options that apply by marking them with an "[x]".
 -->
 
-- [ ] 🔍 My code follows the [style guidelines](../CODE_STYLE_AND_STANDARDS_GUIDES.md) of this project.
+- [ ] 🔍 My code follows the [style guidelines](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md) of this project.
 - [ ] ✅ I ran code linters on the modified files.
 - [ ] 🛠️ I have reviewed and tested my code thoroughly.
 - [ ] 📝 I have commented my code, especially in hard-to-understand areas ( e.g., using JSDoc for methods ).
@@ -216,8 +216,8 @@ REQUIRED: Select all options that apply by marking them with an "[x]".
 - [ ] 🔒 I have considered potential security impacts and mitigated risks.
 - [ ] 🌍 I have verified that any internationalization ( i18n ) changes are correct.
 - [ ] 🧰 Dependency updates are listed and explained.
-- [ ] 📚 I have read and understood the [Pull Request Guidelines](../CONTRIBUTING.md#pull-requests).
-- [ ] ✍️ I have completed the [Author Self-Review Process](./review_process_template.md).
+- [ ] 📚 I have read and understood the [Pull Request Guidelines](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md#pull-requests).
+- [ ] ✍️ I have completed the [Author Self-Review Process](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/.github/review_process_template.md).
 
 ## 📰 Release Notes
 
