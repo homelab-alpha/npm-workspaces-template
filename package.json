@@ -21,8 +21,8 @@
     "server:format:check": "npm run format:check --workspace=server",
     "dev": "npm run client:dev & npm run server:dev",
     "build": "npm run client:build & npm run server:start",
-    "markdown:format:check": "markdownlint \"./*.md\" --config \".markdownlint.jsonc\" --ignore \"./node_modules/**\"",
-    "markdown:lint": "markdownlint \"./*.md\" --fix --config \".markdownlint.jsonc\" --ignore \"./node_modules/**\"",
+    "markdown:format:check": "markdownlint \"**/*.md\" --config \".markdownlint.jsonc\" --ignore \"./node_modules/**\"",
+    "markdown:lint": "markdownlint \"**/*.md\" --fix --config \".markdownlint.jsonc\" --ignore \"./node_modules/**\"",
     "format:check": "npm run client:format:check && npm run server:format:check && npm run markdown:format:check",
     "lint": "npm run client:lint && npm run server:lint && npm run markdown:lint"
   },
