@@ -38,6 +38,7 @@ This template offers the following key features:
 
 Ensure you have the following installed:
 
+- [Git](https://git-scm.com/downloads) (version: 2.50.0 or higher recommended)
 - [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher recommended)
 - [npm](https://www.npmjs.com/get-npm) (version: 10.9.0 or higher recommended)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (includes Docker Engine and Docker Compose)
