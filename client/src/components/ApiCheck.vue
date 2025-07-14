@@ -28,7 +28,8 @@ onMounted(async () => {
     emit("update:status", "online");
   } catch (error) {
     console.error("Error fetching API message:", error);
-    apiMessage.value = "Failed to connect to API.";
+    apiMessage.value =
+      "Unable to reach the API. Please ensure the backend server is running and accessible.";
     apiStatus.value = "offline";
     emit("update:status", "offline");
   }

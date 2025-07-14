@@ -139,8 +139,8 @@ const updateApiStatus = (status: "loading" | "online" | "offline") => {
     </template>
     <template #heading>API Status Check</template>
 
-    Verify client-server communication to ensure the API is reachable. The
-    current server status message is displayed below:
+    Verify that the client can communicate with your development server. The
+    current API connection status is displayed below:
     <ApiCheck @update:status="updateApiStatus" />
   </WelcomeItem>
 </template>
