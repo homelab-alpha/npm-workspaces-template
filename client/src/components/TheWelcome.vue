@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import WelcomeItem from "./WelcomeItem.vue";
+import { ref } from "vue";
+import ApiCheck from "./ApiCheck.vue";
+import ApiStatusIcon from "./icons/ApiStatusIcon.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 import ToolingIcon from "./icons/IconTooling.vue";
+import WelcomeItem from "./WelcomeItem.vue";
 
 const openReadmeInEditor = () => fetch("/__open-in-editor?file=README.md");
+
+const apiIconStatus = ref<"loading" | "online" | "offline">("loading");
+
+const updateApiStatus = (status: "loading" | "online" | "offline") => {
+  apiIconStatus.value = status;
+};
 </script>
 
 <template>
@@ -122,5 +131,16 @@ const openReadmeInEditor = () => fetch("/__open-in-editor?file=README.md");
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener"
       >becoming a sponsor</a
     >.
+  </WelcomeItem>
+
+  <WelcomeItem>
+    <template #icon>
+      <ApiStatusIcon :status="apiIconStatus" />
+    </template>
+    <template #heading>API Status Check</template>
+
+    Verify client-server communication to ensure the API is reachable. The
+    current server status message is displayed below:
+    <ApiCheck @update:status="updateApiStatus" />
   </WelcomeItem>
 </template>
