@@ -217,11 +217,6 @@ npm install
 
 ## Local Development (Node.js Only)
 
-> [!CAUTION]
-> The `npm run dev` command currently only successfully starts the client
-> development server (`npm run dev --workspace=client`). The server component
-> is not functional at this time. Use with caution.
-
 To run the project directly on your machine without Docker:
 
 ### Step 1: Start the development servers
@@ -235,7 +230,7 @@ npm run dev
 
 ### Step 2: Access the application
 
-The application should be accessible in your web browser at [http://localhost:3210](http://localhost:3210).
+The application should be accessible in your web browser at [http://localhost:5173](http://localhost:5173).
 
 [⬆️ Go Back to Local Development Options](#step-5-choose-one-of-the-following-options-for-local-development)
 
@@ -271,7 +266,7 @@ docker compose --file compose.build.yml up --build --detach
 
 ### Step 3: Access the application
 
-The application should be accessible in your web browser at [http://localhost:3210](http://localhost:3210).
+The application should be accessible in your web browser at [http://localhost:5173](http://localhost:5173).
 
 [⬆️ Go Back to Local Development Options](#step-5-choose-one-of-the-following-options-for-local-development)
 
@@ -336,11 +331,6 @@ This command will run `format:check` for both the `client` and `server`
 workspaces, and then `markdown:format:check` for all Markdown files.
 
 ### Fixing Code Style
-
-> [!WARNING]
-> The current linting settings are **preliminary** and undergoing **active
-> development**. These configurations are subject to frequent changes as the
-> project evolves.
 
 To automatically fix most linting and formatting issues:
 
