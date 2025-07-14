@@ -51,7 +51,7 @@
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["patch"],
       "labels": ["dev", "dependencies", "patch"],
-      "automerge": true,
+      "automerge": false,
       "automergeType": "squash"
     }
   ]
