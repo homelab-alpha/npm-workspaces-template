@@ -134,14 +134,14 @@ Modify the `name`, `version`, `description`, `repository`, `author`, `bugs`, and
   // ... other fields ...
   "repository": {
     "type": "git",
-    "url": "git+[https://github.com/your-username/your-project-name.git](https://github.com/your-username/your-project-name.git)" // Update 'your-username' and 'your-project-name'
+    "url": "git+https://github.com/your-username/your-project-name.git" // Update 'your-username' and 'your-project-name'
   },
   "author": "Your Name <your-email@example.com>", // Replace with your name and email
   "license": "Apache-2.0",
   "bugs": {
-    "url": "[https://github.com/your-username/your-project-name/issues](https://github.com/your-username/your-project-name/issues)" // Update 'your-username' and 'your-project-name'
+    "url": "https://github.com/your-username/your-project-name/issues" // Update 'your-username' and 'your-project-name'
   },
-  "homepage": "[https://github.com/your-username/your-project-name#readme](https://github.com/your-username/your-project-name#readme)" // Update 'your-username' and 'your-project-name'
+  "homepage": "https://github.com/your-username/your-project-name#readme" // Update 'your-username' and 'your-project-name'
   // ... rest of the file ...
 }
 ```
