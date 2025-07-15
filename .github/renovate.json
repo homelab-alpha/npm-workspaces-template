@@ -10,7 +10,7 @@
     ":automergePatch"
   ],
   "assignees": [""],
-  "rangeStrategy": "auto",
+  "rangeStrategy": "bump",
   "ignoreDeps": [],
   "semanticCommits": "enabled",
   "ignorePaths": ["docker/"],
