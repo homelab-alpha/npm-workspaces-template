@@ -37,15 +37,14 @@ onMounted(async () => {
 </script>
 
 <template>
-  <p :style="{ color: textColor }">{{ apiMessage }}</p>
+  <h3 :style="{ color: textColor }">{{ apiMessage }}</h3>
 </template>
 
 <style scoped>
-p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 10px;
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
 }
 </style>
