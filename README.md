@@ -62,9 +62,9 @@ cd npm-workspaces-template
 > [!IMPORTANT]
 >
 > - **New Project:** If you are starting a new project with this template,
->   continue with the sub-steps of **Step 3**.
+>   continue with the [sub-steps](#step-3a-remove-existing-homelab-alpha-git-history-and-specific-files) of **Step 3**.
 > - **Contribute:** If you are contributing to this repository, skip **Step 3**
->   and proceed to **Step 4**.
+>   and proceed to [**Step 4**](#step-4-install-all-project-dependencies-from-the-root-directory).
 
 This step guides you through removing Homelab-Alpha specific files and updating project details for a new project.
 
