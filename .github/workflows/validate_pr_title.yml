@@ -15,12 +15,12 @@ jobs:
   main:
     name: Validate PR title
     runs-on: ubuntu-latest
+
     steps:
       - uses: amannn/action-semantic-pull-request@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # Configure which types are allowed (newline-delimited). Only lowercase letters.
           types: |
             feat
             fix
@@ -31,26 +31,18 @@ jobs:
             test
             chore
             revert
-          # Configure which scopes are allowed (newline-delimited). Only lowercase letters.
           scopes: |
             [a-z]*
-          # Configure that a scope is optional.
           requireScope: false
-          # Configure additional validation for the subject based on a regex.
-          # Ensures the subject doesn't start with an uppercase character.
           subjectPattern: ^(?![A-Z]).+$
-          # Override the default error message for subjectPattern.
           subjectPatternError: |
             The subject "{subject}" found in the pull request title "{title}"
             didn't match the configured pattern. Please ensure that the subject
             doesn't start with an uppercase character and uses the imperative mood.
             Please refer to the Commit Message Guidelines:
             https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md#commit-message-guidelines
-          # If the PR contains one of these newline-delimited labels, the validation is skipped.
           ignoreLabels: |
             bot
             ignore-semantic-pull-request
-          # Custom header pattern to parse type, scope, and subject.
-          # Ensures 'type' and 'scope' only contain lowercase letters.
           headerPattern: '^(?<type>[a-z]+)(?:\((?<scope>[a-z]*)\))?: (?<subject>.*)$'
           headerPatternCorrespondence: type, scope, subject
