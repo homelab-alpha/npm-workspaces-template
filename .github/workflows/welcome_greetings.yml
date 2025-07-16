@@ -2,10 +2,14 @@
 name: Welcome Greetings
 
 on:
-  pull_request_target:
-    types: [opened]
   issues:
-    types: [opened]
+    types:
+      - opened
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
 
 permissions:
   issues: write
@@ -13,10 +17,11 @@ permissions:
 
 jobs:
   greetings:
+    name: Welcome New Contributors
     runs-on: ubuntu-latest
+
     steps:
-      - name: Welcome New Contributors
-        uses: actions/first-interaction@v2.0.0
+      - uses: actions/first-interaction@v2.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |
