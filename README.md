@@ -48,7 +48,7 @@ Ensure you have the following installed:
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (includes
   Docker Engine and Docker Compose)
 
-## Using this Template
+### Using this Template
 
 To initialize a new project based on this template, follow these steps.
 
