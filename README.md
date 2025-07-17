@@ -14,10 +14,12 @@ using **npm workspaces**. It provides a structured setup with **client** and
   <p>
     <a href="#npm-workspaces-template">npm Workspaces Template</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#project-progress">Project Progress</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#to-do-list">To-Do List</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#script-development">Script Development</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#docker-image-management">Docker Image Management</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#project-documentation">Project Documentation</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#to-do-list">To-Do List</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#client">Client</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#docker">Docker</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#server">Server</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#documentation">Documentation</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#script-development">Script Development</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#features">Features</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#getting-started">Getting Started</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites">Prerequisites</a><br>
@@ -60,41 +62,57 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 ## Project Progress
 
-**State:** Work in progress (WIP)
-
-> [!WARNING]
+> [!WARNING] Active Development
 >
-> This repository is currently under **active development**. Its structure,
-> features, and content may change frequently and without prior notice.
-> **Contributions are not being accepted at this time, but will be welcomed once
-> the project stabilizes.**
+> **Status:** Work in Progress (WIP)
+>
+> This project is currently under **active development**. Its structure,
+> features, and content are subject to change **frequently and without notice**.
+> At this time, **contributions are not being accepted**. Community contributions
+> will be welcomed once the project reaches a more stable state.
 
-## To-Do List
 
-### Script Development
+### To-Do List
 
-- [ ] Create an `init.sh` script for easy setup and configuration.
-- [ ] Add comprehensive comments to `init.sh` for clarity.
-- [ ] Apply linting rules to `init.sh`.
-- [ ] Test `init.sh` script thoroughly.
+- [ ] Create a final pre-release checklist.
 
-### Docker Image Management
+#### Client
 
-- [x] Create Dockerfile.
-- [x] Create Docker Compose files:
+- [ ] Pending tasks (to be defined).
+
+#### Docker
+
+- [x] Create base Dockerfile.
+- [x] Set up Docker Compose files:
   - [x] `docker-compose.build.yml` for building.
   - [x] `docker-compose.prod.yml` for production.
   - [x] `docker-compose.test.yml` for testing.
-- [ ] Test Dockerfile for functionality.
-- [ ] Test Docker Compose files for functionality.
-- [ ] Implement and test the build and deployment process.
+- [ ] Validate Dockerfile builds and functions correctly.
+- [ ] Test all Docker Compose files for intended behavior.
+- [ ] Implement and verify the full containerized build & deploy workflow.
 
-### Project Documentation
+#### Server
 
-- [ ] Add detailed documentation for the `init.sh` script.
-- [ ] Update "Step 3: Prepare the npm workspace for your own project" after
-      `init.sh` is fully functional.
-- [ ] Update documentation for Docker setup and usage.
+- [x] Set up core linting tools.
+  - [ ] Configure ESLint for JavaScript/TypeScript standards.
+  - [ ] Configure Prettier for consistent code formatting.
+
+#### Documentation
+
+- [ ] Write detailed usage and setup instructions for `init.sh`.
+- [ ] Finalize and update **Step 3: Prepare the npm workspaces** once `init.sh`
+      is complete.
+- [ ] Expand documentation for Docker setup, usage, and environment-specific notes.
+- [ ] Remove the **Caution** notice once the project reaches a stable phase.
+- [ ] Remove the **Caution** notice once the **Docker & Containerization** setup
+      is fully functional.
+
+#### Script Development
+
+- [ ] Develop `init.sh` for automated project setup and configuration.
+- [ ] Add clear and thorough inline documentation within `init.sh`.
+- [ ] Apply shell scripting standards (**shellcheck** compliance).
+- [ ] Test script functionality across various environments (Linux, etc.).
 
 ## Features
 
@@ -150,7 +168,7 @@ git clone https://github.com/homelab-alpha/npm-workspaces-template.git
 cd npm-workspaces-template
 ```
 
-### Step 3: Prepare the npm workspace for your own project
+### Step 3: Prepare the npm workspaces for your own project
 
 This step guides you through removing Homelab-Alpha specific files and updating
 project details for a new project.
