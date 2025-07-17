@@ -1,13 +1,66 @@
-# Homelab-Alpha
+# npm Workspaces Template
 
 [![Linting](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml)
 [![CodeQL](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql)
 
-Welcome to the Homelab-Alpha npm workspaces template repository!
+Welcome to the Homelab-Alpha npm Workspaces Template repository!
 
-This project **Work in Progress (WIP)** is a boilerplate for Node.js projects
-using **npm workspaces**. It provides a structured setup with `client` and
-`server` workspaces for modular full-stack development.
+This project is a boilerplate for Node.js projects
+using **npm workspaces**. It provides a structured setup with **client** and
+**server** workspaces for modular full-stack development.
+
+<details>
+  <summary><strong>Table of Contents</strong> (click to expand)</summary>
+  <p>
+    <a href="#npm-workspaces-template">npm Workspaces Template</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#project-progress">Project Progress</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#to-do-list">To-Do List</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#script-development">Script Development</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#docker-image-management">Docker Image Management</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#project-documentation">Project Documentation</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#features">Features</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#getting-started">Getting Started</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites">Prerequisites</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#using-this-template">Using this Template</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-open-your-terminal-and-clone-the-repository">Step 1: Open your terminal and clone the repository</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-navigate-to-the-cloned-project-directory">Step 2: Navigate to the cloned project directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-prepare-the-npm-workspace-for-your-own-project">Step 3: Prepare the npm workspace for your own project</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3a-remove-existing-homelab-alpha-git-history-and-specific-files">Step 3a: Remove existing Homelab-Alpha Git history and specific files</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3b-update-the-root-folder-name">Step 3b: Update the root folder name</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3c-initialize-a-new-git-repository">Step 3c: Initialize a new Git repository</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3d-update-project-details-in-the-root-packagejson">Step 3d: Update project details in the root `package.json`</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3e-update-service-and-image-names-in-docker-compose-files">Step 3e: Update service and image names in Docker Compose files</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3f-review-and-update-remaining-project-documentation-and-configuration-files">Step 3f: Review and update remaining project documentation and configuration files</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3g-install-the-renovate-github-app">Step 3g: Install the Renovate GitHub App</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-install-all-project-dependencies-from-the-root-directory">Step 4: Install all project dependencies from the root directory</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#development">Development</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#available-commands">Available Commands</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#local-development-npm-only">Local Development (npm Only)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-start-the-development-servers">Step 1: Start the development servers</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-access-the-application">Step 2: Access the application</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#local-development-with-docker-compose">Local Development (with Docker Compose)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory">Step 1: Navigate to the `docker` directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-development-environment">Step 2: Start the development environment</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-access-the-application">Step 3: Access the application</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#running-tests-with-docker-compose">Running Tests (with Docker Compose)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory-1">Step 1: Navigate to the `docker` directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-run-the-tests">Step 2: Run the tests</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#production-deployment-with-docker-compose">Production Deployment (with Docker Compose)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory-2">Step 1: Navigate to the `docker` directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-production-service">Step 2: Start the production service</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#linting-and-formatting">Linting and Formatting</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#checking-code-style">Checking Code Style</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#fixing-code-style">Fixing Code Style</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#contributing">Contributing</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
+  </p>
+</details>
+
+## Project Progress
+
+**State:** Work in progress (WIP)
 
 > [!WARNING]
 >
@@ -16,15 +69,44 @@ using **npm workspaces**. It provides a structured setup with `client` and
 > **Contributions are not being accepted at this time, but will be welcomed once
 > the project stabilizes.**
 
+## To-Do List
+
+### Script Development
+
+- [ ] Create an `init.sh` script for easy setup and configuration.
+- [ ] Add comprehensive comments to `init.sh` for clarity.
+- [ ] Apply linting rules to `init.sh`.
+- [ ] Test `init.sh` script thoroughly.
+
+### Docker Image Management
+
+- [x] Create Dockerfile.
+- [x] Create Docker Compose files:
+  - [x] `docker-compose.build.yml` for building.
+  - [x] `docker-compose.prod.yml` for production.
+  - [x] `docker-compose.test.yml` for testing.
+- [ ] Test Dockerfile for functionality.
+- [ ] Test Docker Compose files for functionality.
+- [ ] Implement and test the build and deployment process.
+
+### Project Documentation
+
+- [ ] Add detailed documentation for the `init.sh` script.
+- [ ] Update "Step 3: Prepare the npm workspace for your own project" after
+      `init.sh` is fully functional.
+- [ ] Update documentation for Docker setup and usage.
+
 ## Features
 
 This template offers the following key features:
 
 - **npm Workspaces**: Efficiently manages multi-package repositories.
-- **Two Workspaces**:
-  - Frontend (Client): Built with Vue.js 3, Vite, and TypeScript. Includes Pinia
+- **Automated Project Setup** (Coming Soon): Includes an initialization script
+  to automate the initial configuration and setup process.
+- **Modular Workspaces**:
+  - **Frontend (Client)**: Built with Vue.js 3, Vite, and TypeScript. Includes Pinia
     for state management and Vue Router for routing.
-  - Backend (Server): A lightweight Express.js server.
+  - **Backend (Server)**: A lightweight Express.js server.
 - **Tooling**: Comes with ESLint and Prettier for code consistency, and Vitest
   and Playwright for comprehensive testing.
 - **Docker Integration**: Containerized development and deployment with Docker
