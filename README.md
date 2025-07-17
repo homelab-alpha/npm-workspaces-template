@@ -489,4 +489,4 @@ Last updated: July 16, 2025
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE) file for more details.
 
-[🔝 Go Back to Top](#homelab-alpha)
+[🔝 Go Back to Top](#npm-workspaces-template)
