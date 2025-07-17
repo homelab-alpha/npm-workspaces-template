@@ -11,7 +11,7 @@
   ],
   "assignees": [""],
   "rangeStrategy": "bump",
-  "ignoreDeps": [],
+  "ignoreDeps": ["node"],
   "semanticCommits": "enabled",
   "ignorePaths": ["docker/"],
   "packageRules": [
