@@ -2,6 +2,7 @@
 
 [![Linting](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml)
 [![CodeQL](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql/badge.svg?branch=main)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/github-code-scanning/codeql)
+[![Last commit](https://img.shields.io/github/last-commit/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Last%20commit&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/commits/main/)
 
 Welcome to the Homelab-Alpha npm Workspaces Template repository!
 
