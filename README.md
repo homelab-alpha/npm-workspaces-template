@@ -62,7 +62,7 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 ## Project Progress
 
-> [!WARNING] Active Development
+> [!WARNING]
 >
 > **Status:** Work in Progress (WIP)
 >
