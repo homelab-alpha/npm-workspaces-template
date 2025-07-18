@@ -25,17 +25,10 @@ using **npm workspaces**. It provides a structured setup with **client** and
     &nbsp;&nbsp;&nbsp; <a href="#getting-started">Getting Started</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites">Prerequisites</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#using-this-template">Using this Template</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-open-your-terminal-and-clone-the-repository">Step 1: Open your terminal and clone the repository</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-navigate-to-the-cloned-project-directory">Step 2: Navigate to the cloned project directory</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-prepare-the-npm-workspace-for-your-own-project">Step 3: Prepare the npm workspace for your own project</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3a-remove-existing-homelab-alpha-git-history-and-specific-files">Step 3a: Remove existing Homelab-Alpha Git history and specific files</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3b-update-the-root-folder-name">Step 3b: Update the root folder name</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3c-initialize-a-new-git-repository">Step 3c: Initialize a new Git repository</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3d-update-project-details-in-the-root-packagejson">Step 3d: Update project details in the root `package.json`</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3e-update-service-and-image-names-in-docker-compose-files">Step 3e: Update service and image names in Docker Compose files</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3f-review-and-update-remaining-project-documentation-and-configuration-files">Step 3f: Review and update remaining project documentation and configuration files</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3g-install-the-renovate-github-app">Step 3g: Install the Renovate GitHub App</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-install-all-project-dependencies-from-the-root-directory">Step 4: Install all project dependencies from the root directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-clone-the-repository">Step 1: Clone the repository</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-navigate-to-the-project-directory">Step 2: Navigate to the project directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-initialize-the-project">Step 3: Initialize the project</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-install-project-dependencies">Step 4: Install project dependencies</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#development">Development</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#available-commands">Available Commands</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#local-development-npm-only">Local Development (npm Only)</a><br>
@@ -157,7 +150,7 @@ To initialize a new project based on this template, follow these steps.
 > These steps are for creating a **new project**. If you want to contribute to
 > this template itself, please see the [Contributing](#contributing) section.
 
-### Stap 1: Clone the repository
+### Step 1: Clone the repository
 
 Open your terminal and run the following command:
 
@@ -165,7 +158,7 @@ Open your terminal and run the following command:
 git clone https://github.com/homelab-alpha/npm-workspaces-template.git
 ```
 
-### Stap 2: Navigate to the project directory
+### Step 2: Navigate to the project directory
 
 Change into the newly cloned project directory:
 
@@ -173,7 +166,7 @@ Change into the newly cloned project directory:
 cd npm-workspaces-template
 ```
 
-### Stap 3: Initialize the project
+### Step 3: Initialize the project
 
 > [!WARNING]
 >
@@ -210,7 +203,7 @@ This script will guide you through the following:
 > You need to install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
 > It will help you keep your dependencies up to date automatically.
 
-### Stap 4: Install project dependencies
+### Step 4: Install project dependencies
 
 From the root directory of your project, install all required dependencies:
 
