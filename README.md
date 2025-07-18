@@ -72,7 +72,6 @@ using **npm workspaces**. It provides a structured setup with **client** and
 > At this time, **contributions are not being accepted**. Community contributions
 > will be welcomed once the project reaches a more stable state.
 
-
 ### To-Do List
 
 - [ ] Create a final pre-release checklist.
@@ -158,173 +157,62 @@ To initialize a new project based on this template, follow these steps.
 > These steps are for creating a **new project**. If you want to contribute to
 > this template itself, please see the [Contributing](#contributing) section.
 
-### Step 1: Open your terminal and clone the repository
+### Stap 1: Clone the repository
+
+Open your terminal and run the following command:
 
 ```bash
 git clone https://github.com/homelab-alpha/npm-workspaces-template.git
 ```
 
-### Step 2: Navigate to the cloned project directory
+### Stap 2: Navigate to the project directory
+
+Change into the newly cloned project directory:
 
 ```bash
 cd npm-workspaces-template
 ```
 
-### Step 3: Prepare the npm workspaces for your own project
+### Stap 3: Initialize the project
 
-This step guides you through removing Homelab-Alpha specific files and updating
-project details for a new project.
+> [!WARNING]
+>
+> **Status:** Work in Progress (WIP)
+>
+> The initialization script is currently **functional**, but still under
+> **active development**. New features and functionality will be added over time,
+> and existing elements may change **without prior notice**.
 
-#### Step 3a: Remove existing Homelab-Alpha Git history and specific files
+Run the `init.sh` script to prepare the npm workspaces for your new project.
+This script handles the initial setup, including cleaning up template-specific
+files and configuring the project for use.
 
 ```bash
-rm -rf \
-  .git \
-  .github/DISCUSSION_TEMPLATE \
-  .github/ISSUE_TEMPLATE \
-  .github/pull_request_template.md \
-  .github/review_process_template.md \
-  .github/workflows/stale_and_unreproducible_issue_management.yml \
-  .github/workflows/validate_pr_title.yml \
-  .github/workflows/welcome_greetings.yml
+./init.sh
 ```
 
-#### Step 3b: Update the root folder name
+This script will guide you through the following:
 
-Choose one of the following options to set up your project folder with your
-desired name (e.g., `my-new-app`):
+- **Removing existing Git history**: The `.git` directory will be removed to
+  dissociate the new project from the template's Git history.
+- **Setting up a new Git repository** (Optional): You will be prompted to
+  initialize a new Git repository for your project.
+- **Updating project details**: The script will assist you in updating relevant
+  project details in the root, client and server `package.json` and Docker
+  Compose files.
 
 > [!IMPORTANT]
->
-> Replace `my-new-app` with your actual desired folder name in the commands below.
-
-**Option 1: Rename the folder (moves and renames)**
-
-If you don't need to keep the original `npm-workspaces-template` folder, you
-can rename it directly:
-
-```bash
-cd ..
-mv npm-workspaces-template my-new-app
-cd my-new-app
-```
-
-**Option 2: Copy the folder (creates a new project while keeping the original
-template)**
-
-If you want to keep the original `npm-workspaces-template` folder as a
-template, create a copy:
-
-```bash
-cd ..
-cp -r npm-workspaces-template my-new-app
-cd my-new-app
-```
+> **Essential: Verify Project Setup**: After initialization, it is crucial to
+> review and **if necessary** adjust project documentation and configuration
+> files to align with your specific project requirements.
 
 > [!NOTE]
->
-> For both options, these commands will first move you one directory up.
-> Then, they will either rename or copy the `npm-workspaces-template` folder
-> to your chosen project name, and finally navigate you into your new
-> project directory.
+> You need to install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
+> It will help you keep your dependencies up to date automatically.
 
-#### Step 3c: Initialize a new Git repository
+### Stap 4: Install project dependencies
 
-```bash
-git init
-```
-
-#### Step 3d: Update project details in the root `package.json`
-
-Modify the `name`, `version`, `description`, `repository`, `author`, `bugs`, and
-`homepage` fields in the `/package.json` file to reflect your new project's
-details.
-
-```json
-{
-  "name": "your-project-name", // Change this to your desired project name (e.g., 'my-new-app')
-  "version": "0.1.0", // Update if necessary; '0.1.0' is a good starting point
-  "description": "A brief description of your new project.", // Provide a brief description of your project
-  // ... other fields ...
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/your-username/your-project-name.git" // Update 'your-username' and 'your-project-name'
-  },
-  "author": "Your Name <your-email@example.com>", // Replace with your name and email
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/your-username/your-project-name/issues" // Update 'your-username' and 'your-project-name'
-  },
-  "homepage": "https://github.com/your-username/your-project-name#readme" // Update 'your-username' and 'your-project-name'
-  // ... rest of the file ...
-}
-```
-
-Also update the `client` and `server` workspaces. Remember to update the `name`
-and `description` fields within their respective `package.json` files:
-
-- `/client/package.json`
-- `/server/package.json`
-
-#### Step 3e: Update service and image names in Docker Compose files
-
-Modify the `container_name`, `image`, and `labels` fields in your Docker Compose
-files (`/docker/compose.build.yml`, `/docker/compose.prod.yml`, and `/docker/compose.test.yml`)
-to match your project's name.
-
-For example, in `/docker/compose.prod.yml`:
-
-```yml
-services:
-  app:
-    container_name: your-project-name # Change this to your project's container name
-    image: ghcr.io/your-username/your-project-name:0.1.0 # Change this (e.g., your GitHub Container Registry path)
-    pull_policy: if_not_present
-    ports:
-      - "3210:3210"
-    restart: unless-stopped
-    healthcheck:
-      disable: true
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "1M"
-        max-file: "2"
-    stop_grace_period: 1m
-    security_opt:
-      - no-new-privileges:true
-    labels:
-      com.docker.compose.project: "Your Project Name" # Change this to your project's display name
-      com.your-project-name.description: "A brief description of your new project." # Change this to your project's description
-    # volumes:
-    #   - if needed
-```
-
-Apply similar changes to `/docker/compose.build.yml` and `/docker/compose.test.yml`.
-Ensure the `image` name in `compose.build.yml` (if specified) and `compose.test.yml`
-also reflects your new project name.
-
-#### Step 3f: Review and update remaining project documentation and configuration files
-
-These files often contain references to the original template name or specific
-Homelab-Alpha details that you'll need to update for your project:
-
-- `/LICENSE` (Update copyright year and owner)
-- `/README.md` (This file itself, ensuring all references match your project)
-- `/SECURITY.md` (Update contact information and policy details)
-- `/CONTRIBUTING.md` (Adapt contribution guidelines to your project)
-- `/CODE_STYLE_AND_STANDARDS_GUIDES.md` (Review and adjust as needed)
-- `.github/CODEOWNERS` (Update to your GitHub usernames/teams)
-- `.github/renovate.json` (Review configuration for your project's dependencies)
-
-#### Step 3g: Install the Renovate GitHub App
-
-Install the [Renovate Github App](https://github.com/apps/renovate) if not
-already installed.
-
-### Step 4: Install all project dependencies from the root directory
-
-From the root directory, run:
+From the root directory of your project, install all required dependencies:
 
 ```bash
 npm install
