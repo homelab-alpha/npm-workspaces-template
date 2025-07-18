@@ -110,10 +110,11 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 #### Script Development
 
-- [ ] Develop `init.sh` for automated project setup and configuration.
-- [ ] Add clear and thorough inline documentation within `init.sh`.
-- [ ] Apply shell scripting standards (**shellcheck** compliance).
+- [x] Develop `init.sh` for automated project setup and configuration.
+- [x] Add clear and thorough inline documentation within `init.sh`.
+- [x] Apply shell scripting standards (**shellcheck** compliance).
 - [ ] Test script functionality across various environments (Linux, etc.).
+- [ ] TODO comments.
 
 ## Features
 
