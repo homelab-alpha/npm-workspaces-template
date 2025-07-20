@@ -92,8 +92,8 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 #### Documentation
 
-- [ ] Write detailed usage and setup instructions for `init.sh`.
-- [ ] Finalize and update **Step 3: Prepare the npm workspaces** once `init.sh`
+- [x] Write detailed usage and setup instructions for `init.sh`.
+- [x] Finalize and update **Step 3: Prepare the npm workspaces** once `init.sh`
       is complete.
 - [ ] Expand documentation for Docker setup, usage, and environment-specific notes.
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
@@ -200,7 +200,7 @@ This script will guide you through the following:
 > files to align with your specific project requirements.
 
 > [!NOTE]
-> You need to install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
+> Install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
 > It will help you keep your dependencies up to date automatically.
 
 ### Step 4: Install project dependencies
@@ -382,7 +382,7 @@ No known issues at this time.
 If you discover a bug or experience an issue not listed here, please help us
 improve by [opening an issue on GitHub](https://github.com/homelab-alpha/npm-workspaces-template/issues/new/choose).
 
-Last updated: July 16, 2025
+Last updated: Jul 20, 2025
 
 [⬆️ Go Back to Getting Started](#getting-started)
 
