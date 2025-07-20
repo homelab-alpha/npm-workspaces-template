@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-18T11:59:46+02:00
+# Date: 2025-07-19T10:34:51+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -41,6 +41,10 @@ readonly LOGFILE
 
 YEAR=$(date +'%Y')
 readonly YEAR
+
+# This variable will store the original directory name
+ORIGINAL_DIR_NAME=$(basename "$PWD")
+readonly ORIGINAL_DIR_NAME
 
 # --- Color Definitions ---
 readonly COLOR_BLUE='\033[1;34m'
@@ -239,7 +243,7 @@ update_configuration_files() {
 
     # Update client/package.json
     safe_sed_update "client/package.json" \
-        -e "s|\"name\": \".*\"|\"name\": \"$PROJECT_NAME-client\"|" \
+        -e "s|\"name\": \".*\"|\"name\": \"frontend-$PROJECT_NAME\"|" \
         -e "s|\"description\": \".*\"|\"description\": \"Client-side for $PROJECT_NAME\"|" \
         -e "s|\"author\": \".*\"|\"author\": \"$AUTHOR\"|" \
         -e "s|git+https://github.com/homelab-alpha/npm-workspaces-template.git|git+https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git|" \
@@ -248,7 +252,7 @@ update_configuration_files() {
 
     # Update server/package.json
     safe_sed_update "server/package.json" \
-        -e "s|\"name\": \".*\"|\"name\": \"$PROJECT_NAME-server\"|" \
+        -e "s|\"name\": \".*\"|\"name\": \"backend-$PROJECT_NAME\"|" \
         -e "s|\"description\": \".*\"|\"description\": \"Server-side for $PROJECT_NAME\"|" \
         -e "s|\"author\": \".*\"|\"author\": \"$AUTHOR\"|" \
         -e "s|git+https://github.com/homelab-alpha/npm-workspaces-template.git|git+https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git|" \
@@ -263,20 +267,30 @@ update_configuration_files() {
             -e "s|image: ghcr.io/homelab-alpha/npm-workspaces-template:.*|image: ghcr.io/$GITHUB_USERNAME/$PROJECT_NAME:0.1.0|" \
             -e "s|com.docker.compose.project: \".*\"|com.docker.compose.project: \"$PROJECT_NAME\"|" \
             -e "s|com.npm-workspaces-template.description: \".*\"|com.$PROJECT_NAME.description: \"$PROJECT_DESCRIPTION\"|"
-
     done
 
     # Update .github/CODEOWNERS
     safe_sed_update ".github/CODEOWNERS" \
+        -e "s|npm-workspaces-template|$PROJECT_NAME|" \
         -e "s|\* @homelab-alpha|\* @$GITHUB_USERNAME|"
+
+    # Update .github/renovate.json
+    safe_sed_update ".github/renovate.json" \
+        -e "s/\"assignees\": \[[^]]*\]/\"assignees\": [\"$GITHUB_USERNAME\"]/" \
+        -e "s/\"labels\": \[[^]]*\]/\"labels\": []/"
 
     # Update LICENSE
     safe_sed_update "./LICENSE" \
         -e "s|   Copyright 2025 Homelab-Alha ( GJS )|   Copyright $YEAR $AUTHOR_NAME|"
+
+    # Update The About vue
+    safe_sed_update "./client/src/components/TheAbout.vue" \
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME|" \
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/CONTRIBUTING.md|" \
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE|"
 }
 
 update_readme_file() {
-    # TODO: Update the custom README
     log "Updating README.md with custom content."
 
     # Constructing the README content using a heredoc for multi-line string assignment.
@@ -286,14 +300,13 @@ update_readme_file() {
 
 ## Getting Started
 
-### Step 1: Install the Renovate GitHub App
+> [!NOTE]
+> Install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
+> It will help you keep your dependencies up to date automatically.
 
-Install the [Renovate Github App](https://github.com/apps/renovate) if not
-already installed.
+### Install project dependencies
 
-### Step 2: Install all project dependencies from the root directory
-
-From the root directory, run:
+From the root directory of your project, install all required dependencies:
 
 \`\`\`bash
 npm install
@@ -301,7 +314,7 @@ npm install
 
 ## Development
 
-Nou you project is setup, you can use the following commands for development,
+Now your project is set up, you can use the following commands for development,
 testing, and deployment.
 
 ### Available Commands
@@ -451,27 +464,86 @@ clean_up_script() {
     run_and_log "remove initialization script" rm -- "$SCRIPT_NAME"
 }
 
-# Displays a final success message with next steps.
+# Rename the project directory.
+rename_project_directory() {
+    # Check if the current directory name is different from the desired project name.
+    if [[ "$ORIGINAL_DIR_NAME" != "$PROJECT_NAME" ]]; then
+        log "Attempting to rename directory from '$ORIGINAL_DIR_NAME' to '$PROJECT_NAME'..."
+        # We need to move up one level to rename the directory.
+        # Save current directory.
+        local current_path
+        current_path=$(pwd)
+
+        # Get the parent directory.
+        local parent_path
+        parent_path=$(dirname "$current_path")
+
+        # Change to the parent directory.
+        if cd "$parent_path"; then
+            if mv "$ORIGINAL_DIR_NAME" "$PROJECT_NAME"; then
+                log "Successfully renamed directory to '$PROJECT_NAME'."
+                # Change back into the new project directory.
+                if ! cd "$parent_path/$PROJECT_NAME"; then # Changed to use parent_path for clarity
+                    log "ERROR: Failed to change into the new project directory '$PROJECT_NAME'. Please navigate manually."
+                    return 1
+                else
+                    # Force the shell to re-evaluate its current directory path.
+                    cd .
+                fi
+            else
+                log "ERROR: Failed to rename directory from '$ORIGINAL_DIR_NAME' to '$PROJECT_NAME'. Please rename it manually."
+                return 1
+            fi
+        else
+            log "ERROR: Failed to change to parent directory '$parent_path'. Cannot rename the project directory."
+            return 1
+        fi
+    else
+        log "Directory name is already '$PROJECT_NAME'. No rename needed."
+    fi
+}
+
+# This function displays a final success message along with the next steps for the user.
 display_final_message() {
+
+    # Display a visually appealing success banner using ANSI escape codes for colors.
     echo # Blank line for spacing
     echo -e "${COLOR_GREEN}=====================================================${COLOR_RESET}"
     echo -e "${COLOR_GREEN}    🎉 Your new project '$PROJECT_NAME' is ready! 🎉   ${COLOR_RESET}"
     echo -e "${COLOR_GREEN}=====================================================${COLOR_RESET}"
     echo # Blank line for spacing
     echo "Next steps:"
-    # Check the user's choice for Git initialization. The variable is converted to lowercase for case-insensitive comparison.
+
+    # Step 1: Instruct the user to refresh their terminal's current directory.
+    echo "  1. Refresh your terminal's current directory path (important after renaming):"
+    echo "     cd ." # Suggests the user runs 'cd .' to refresh their prompt.
+
+    # Check if the user opted for Git initialization.
+    # The variable `INITIALIZE_GIT` is converted to lowercase to ensure a case-insensitive comparison.
     if [[ "${INITIALIZE_GIT,,}" == "y" || "${INITIALIZE_GIT,,}" == "yes" ]]; then
-        echo "  1. Create a new repository on GitHub named '$PROJECT_NAME'."
-        echo "  2. Link your local repository: git remote add origin https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git"
-        echo "  3. Push your first commit: git push -u origin main"
-        echo "  4. Install dependencies: npm install"
-        echo "  5. Start developing: npm run dev"
+        # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
+        echo "  2. Create a new repository on GitHub named '$PROJECT_NAME' (e.g., via the GitHub website)."
+        echo "  3. Link your local repository to the remote:"
+        echo "     git remote add origin https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git"
+        echo "  4. Push your initial commit to GitHub:"
+        echo "     git push -u origin main"
+        echo "  5. Install project dependencies:"
+        echo "     npm install"
+        echo "  6. Start developing your application:"
+        echo "     npm run dev"
     else
-        echo "  1. Initialize a Git repository if you wish: git init"
-        echo "  2. Install dependencies: npm install"
-        echo "  3. Start developing: npm run dev"
+        # If Git was not initialized, provide the option to do so.
+        echo "  2. Initialize a Git repository if you wish:"
+        echo "     git init"
+        echo "  3. Install project dependencies:"
+        echo "     npm install"
+        echo "  4. Start developing your application:"
+        echo "     npm run dev"
     fi
+
     echo # Blank line for spacing
+
+    # Inform the user about the location of the detailed setup log file.
     echo "A detailed log of this setup is available at: $LOGFILE"
 }
 
@@ -517,14 +589,18 @@ main() {
         log "Skipping Git repository initialization as requested by the user."
     fi
 
-    # 7. Self-destruct Script
+    # 7. Rename the project directory
+    print_section_header "Renaming Project Directory"
+    rename_project_directory
+
+    # 8. Self-destruct Script
     print_section_header "Cleaning Up"
     clean_up_script
 
     log "Project initialization completed successfully. Enjoy your new project!"
     log "END OF LOG"
 
-    # 8. Display Final Message
+    # 9. Display Final Message
     display_final_message
 }
 
