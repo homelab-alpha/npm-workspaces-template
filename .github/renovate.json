@@ -9,7 +9,7 @@
     ":automergeMinor",
     ":automergePatch"
   ],
-  "assignees": [""],
+  "assignees": ["homelab-alpha"],
   "rangeStrategy": "bump",
   "ignoreDeps": ["node"],
   "semanticCommits": "enabled",
