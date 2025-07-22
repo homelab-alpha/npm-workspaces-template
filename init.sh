@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-19T10:34:51+02:00
+# Date: 2025-07-22T08:14:36+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -469,19 +469,23 @@ rename_project_directory() {
     # Check if the current directory name is different from the desired project name.
     if [[ "$ORIGINAL_DIR_NAME" != "$PROJECT_NAME" ]]; then
         log "Attempting to rename directory from '$ORIGINAL_DIR_NAME' to '$PROJECT_NAME'..."
-        # We need to move up one level to rename the directory.
-        # Save current directory.
-        local current_path
-        current_path=$(pwd)
 
         # Get the parent directory.
         local parent_path
-        parent_path=$(dirname "$current_path")
+        parent_path=$(dirname "$PWD")
+
+        # Construct the full path for the potential new directory.
+        local new_project_path="${parent_path}/${PROJECT_NAME}"
+
+        # Check if the target directory already exists in the parent path.
+        if [[ -d "$new_project_path" ]]; then
+            log "ERROR: The target directory '$new_project_path' already exists. Aborting rename to prevent data loss."
+            exit 1 # Exit the script if the directory already exists.
+        fi
 
         # Change to the parent directory.
         if cd "$parent_path"; then
             if mv "$ORIGINAL_DIR_NAME" "$PROJECT_NAME"; then
-                log "Successfully renamed directory to '$PROJECT_NAME'."
                 # Change back into the new project directory.
                 if ! cd "$parent_path/$PROJECT_NAME"; then # Changed to use parent_path for clarity
                     log "ERROR: Failed to change into the new project directory '$PROJECT_NAME'. Please navigate manually."
@@ -489,6 +493,7 @@ rename_project_directory() {
                 else
                     # Force the shell to re-evaluate its current directory path.
                     cd .
+                    log "Successfully renamed directory to '$PROJECT_NAME'."
                 fi
             else
                 log "ERROR: Failed to rename directory from '$ORIGINAL_DIR_NAME' to '$PROJECT_NAME'. Please rename it manually."
