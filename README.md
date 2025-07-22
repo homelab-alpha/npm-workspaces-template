@@ -209,7 +209,7 @@ This script will guide you through the following:
 From the root directory of your project, install all required dependencies:
 
 ```bash
-npm ci
+npm install
 ```
 
 ## Development
@@ -360,7 +360,7 @@ development, please follow these steps:
 
 1. Fork the repository
 2. Clone your forked repository: `git clone https://github.com/your-username/npm-workspaces-template.git`
-3. Install the dependencies `npm ci`
+3. Install the dependencies `npm install`
 4. Create a new branch for your feature or bug fix
 5. Submit a pull request from your branch to our `main` branch
 
