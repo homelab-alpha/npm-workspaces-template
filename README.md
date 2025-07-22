@@ -21,7 +21,6 @@ using **npm workspaces**. It provides a structured setup with **client** and
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#docker">Docker</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#server">Server</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#documentation">Documentation</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#script-development">Script Development</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#features">Features</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#getting-started">Getting Started</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites">Prerequisites</a><br>
@@ -100,14 +99,6 @@ using **npm workspaces**. It provides a structured setup with **client** and
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
 - [ ] Remove the **Caution** notice once the **Docker & Containerization** setup
       is fully functional.
-
-#### Script Development
-
-- [x] Develop `init.sh` for automated project setup and configuration.
-- [x] Add clear and thorough inline documentation within `init.sh`.
-- [x] Apply shell scripting standards (**shellcheck** compliance).
-- [ ] Test script functionality across various environments (Linux, etc.).
-- [ ] TODO comments.
 
 ## Features
 
