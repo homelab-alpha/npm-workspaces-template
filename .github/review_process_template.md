@@ -103,12 +103,12 @@ Provide clear instructions on how reviewers can test and validate your changes.
 Be as precise as possible.
 
 - `Step 1:` Check out this branch locally: `git checkout your-feature-branch`
-- `Step 2:` Install dependencies in the project root: `npm install`
+- `Step 2:` Install dependencies in the project root: `npm ci`
 - `Step 3:` Run all unit tests: `npm test`
 - `Step 4:` To manually verify the new date formatting, start the development
   server in the `server` directory: `cd server && npm run dev`
 - `Step 5:` Then, start the development client in the `client` directory:
-  `cd client && npm run dev`. Open your browser and go to [http://localhost:3210](http://localhost:3210)
+  `cd client && npm run dev`. Open your browser and go to [http://localhost:5173](http://localhost:5173).
   to observe the date display on the homepage.
 
 ### Impact and Risks
