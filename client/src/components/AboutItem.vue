@@ -27,5 +27,4 @@ h2 {
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }
-
 </style>
