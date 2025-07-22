@@ -105,7 +105,7 @@ using **npm workspaces**. It provides a structured setup with **client** and
 This template offers the following key features:
 
 - **npm Workspaces**: Efficiently manages multi-package repositories.
-- **Automated Project Setup** (Coming Soon): Includes an initialization script
+- **Automated Project Setup**: Includes an initialization script
   to automate the initial configuration and setup process.
 - **Modular Workspaces**:
   - **Frontend (Client)**: Built with Vue.js 3, Vite, and TypeScript. Includes Pinia
