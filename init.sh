@@ -135,7 +135,7 @@ ask() {
 # Function to check for required command-line tools.
 check_dependencies() {
     local missing_deps=0
-    for cmd in git tput sed date; do
+    for cmd in git tput sed date node npm; do
         if ! command -v "$cmd" &>/dev/null; then
             log "ERROR: Required command '$cmd' is not installed."
             missing_deps=1
