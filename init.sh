@@ -23,12 +23,13 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-22T08:14:36+02:00
+# Date: 2025-07-22T08:21:51+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
 #   It personalizes the project by updating package.json files, Docker
-#   configurations, CODEOWNERS, LICENSE, and optionally re-initializing the Git repository.
+#   configurations, CODEOWNERS, LICENSE, and optionally re-initializing the Git
+#   repository with a choice between public or private visibility.
 
 # Usage: ./init.sh
 
@@ -54,6 +55,7 @@ readonly COLOR_RESET='\033[0m'
 
 # This variable will be set by the user.
 INITIALIZE_GIT=""
+REPOSITORY_VISIBILITY=""
 
 # --- Helper Functions ---
 
@@ -150,12 +152,6 @@ check_dependencies() {
 
 # Gathers project information from the user.
 gather_project_information() {
-    # TODO: Investigate local default – not functioning as expected
-    # local default_name
-    #default_name=$(git config user.name 2>/dev/null || echo 'Your Name')
-    # local default_email
-    #default_email=$(git config user.email 2>/dev/null || echo 'your-email@example.com')
-
     ask PROJECT_NAME "Enter your project's name (e.g., my-new-app)" "my-new-app"
     ask PROJECT_DESCRIPTION "Enter a brief description for your project" "A new awesome full-stack project."
     ask AUTHOR_NAME "Enter your full name (e.g., John Doe)" "John Doe"
@@ -163,8 +159,13 @@ gather_project_information() {
     ask GITHUB_USERNAME "Enter your GitHub username (e.g., john-doe)" "john-doe"
     ask INITIALIZE_GIT "Initialize a new Git repository? (Optional) default no (y/n)" "n"
 
+    # Only ask for repository visibility if Git initialization is requested
+    if [[ "${INITIALIZE_GIT,,}" == "y" || "${INITIALIZE_GIT,,}" == "yes" ]]; then
+        ask REPOSITORY_VISIBILITY "Choose repository visibility (public/private):" "private"
+    fi
+
     # Export variables to be accessible by sub-shells if needed.
-    export PROJECT_NAME PROJECT_DESCRIPTION AUTHOR_NAME AUTHOR_EMAIL GITHUB_USERNAME INITIALIZE_GIT
+    export PROJECT_NAME PROJECT_DESCRIPTION AUTHOR_NAME AUTHOR_EMAIL GITHUB_USERNAME INITIALIZE_GIT REPOSITORY_VISIBILITY
     export AUTHOR="${AUTHOR_NAME} <${AUTHOR_EMAIL}>"
     log "Constructed author string: $AUTHOR"
 }
@@ -452,7 +453,6 @@ EOF
 }
 
 # Initializes a new Git repository and creates the first commit.
-# TODO: Investigate this section – not functioning as expected
 finalize_setup() {
     run_and_log "initialize new Git repository" git init
     run_and_log "add all files to staging" git add .
@@ -526,10 +526,21 @@ display_final_message() {
     # Check if the user opted for Git initialization.
     # The variable `INITIALIZE_GIT` is converted to lowercase to ensure a case-insensitive comparison.
     if [[ "${INITIALIZE_GIT,,}" == "y" || "${INITIALIZE_GIT,,}" == "yes" ]]; then
+        # Determine the Git remote URL based on repository visibility
+        local git_remote_url="https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git"
+        if [[ "${REPOSITORY_VISIBILITY,,}" == "private" ]]; then
+            # For private repositories, use SSH if preferred or the same HTTPS
+            # For simplicity, we'll stick to HTTPS, but SSH is common for private repos
+            git_remote_url="git@github.com:$GITHUB_USERNAME/$PROJECT_NAME.git"
+            log "Configured Git remote for private repository: $git_remote_url"
+        else
+            log "Configured Git remote for public repository: $git_remote_url"
+        fi
+
         # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
-        echo "  2. Create a new repository on GitHub named '$PROJECT_NAME' (e.g., via the GitHub website)."
+        echo "  2. Create a new repository on GitHub named '$PROJECT_NAME' (${REPOSITORY_VISIBILITY} repository, e.g., via the GitHub website)."
         echo "  3. Link your local repository to the remote:"
-        echo "     git remote add origin https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git"
+        echo "     git remote add origin $git_remote_url"
         echo "  4. Push your initial commit to GitHub:"
         echo "     git push -u origin main"
         echo "  5. Install project dependencies:"
