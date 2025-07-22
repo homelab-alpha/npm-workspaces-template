@@ -260,6 +260,14 @@ update_configuration_files() {
         -e "s|https://github.com/homelab-alpha/npm-workspaces-template/issues|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/issues|" \
         -e "s|https://github.com/homelab-alpha/npm-workspaces-template#readme|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME#readme|"
 
+    # Update package-lock.json
+    safe_sed_update "package-lock.json" \
+        -e "s|\"name\": \"npm-workspaces-template\"|\"name\": \"$PROJECT_NAME\"|" \
+        -e "s|\"name\": \"frontend-npm-workspaces-template\"|\"name\": \"frontend-$PROJECT_NAME\"|" \
+        -e "s|\"name\": \"backend-npm-workspaces-template\"|\"name\": \"backend-$PROJECT_NAME\"|" \
+        -e "s|\"node_modules/frontend-npm-workspaces-template\"|\"node_modules/frontend-$PROJECT_NAME\"|" \
+        -e "s|\"node_modules/backend-npm-workspaces-template\"|\"node_modules/backend-$PROJECT_NAME\"|"
+
     # Update Docker Compose files
     local docker_files=("docker/compose.build.yml" "docker/compose.prod.yml" "docker/compose.test.yml")
     for file in "${docker_files[@]}"; do
@@ -287,8 +295,8 @@ update_configuration_files() {
     # Update The About vue
     safe_sed_update "./client/src/components/TheAbout.vue" \
         -e "s|https://github.com/homelab-alpha/npm-workspaces-template|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/CONTRIBUTING.md|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/LICENSE|"
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/CONTRIBUTING.md|" \
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE|"
 }
 
 update_readme_file() {
@@ -441,7 +449,7 @@ then \`markdown:lint\` for all Markdown files.
 
 ## License
 
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/LICENSE) file for more details.
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE) file for more details.
 
 EOF
   )
@@ -457,6 +465,7 @@ finalize_setup() {
     run_and_log "initialize new Git repository" git init
     run_and_log "add all files to staging" git add .
     run_and_log "create initial commit" git commit -m "Initial commit: Setup project '$PROJECT_NAME' from template"
+    run_and_log "create main branch" git branch -M "main"
 }
 
 # Removes the initialization script itself.
@@ -534,9 +543,11 @@ display_final_message() {
             git_remote_url="git@github.com:$GITHUB_USERNAME/$PROJECT_NAME.git"
             # ? Note: Logging is currently disabled — not needed at this stage
             # log "Configured Git remote for private repository: $git_remote_url"
+            echo # Blank line for spacing; maintains structure in if/else/fi blocks
         else
             # ? Note: Logging is currently disabled — not needed at this stage
             # log "Configured Git remote for public repository: $git_remote_url"
+            echo # Blank line for spacing; maintains structure in if/else/fi blocks
         fi
 
         # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
@@ -544,7 +555,7 @@ display_final_message() {
         echo "  3. Link your local repository to the remote:"
         echo "     git remote add origin $git_remote_url"
         echo "  4. Push your initial commit to GitHub:"
-        echo "     git push -u origin master"
+        echo "     git push -u origin main"
         echo "  5. Install project dependencies:"
         echo "     npm install"
         echo "  6. Start developing your application:"
