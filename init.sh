@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-22T11:28:30+02:00
+# Date: 2025-07-22T12:42:06+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -537,7 +537,7 @@ display_final_message() {
         fi
 
         # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
-        echo "  2. Create a new repository on GitHub named '$PROJECT_NAME' (${REPOSITORY_VISIBILITY} repository, e.g., via the GitHub website)."
+        echo "  2. Create a new repository on GitHub named '$PROJECT_NAME' (${REPOSITORY_VISIBILITY} repository, e.g., via: https://github.com/new)"
         echo "  3. Link your local repository to the remote:"
         echo "     git remote add origin $git_remote_url"
         echo "  4. Push your initial commit to GitHub:"
@@ -594,7 +594,11 @@ main() {
     print_section_header "Updating README File"
     update_readme_file
 
-    # 6. Finalize Git Setup (Optional)
+    # 6. Rename the project directory
+    print_section_header "Renaming Project Directory"
+    rename_project_directory
+
+    # 7. Finalize Git Setup (Optional)
     # Check the user's choice for Git initialization.
     if [[ "${INITIALIZE_GIT,,}" == "y" || "${INITIALIZE_GIT,,}" == "yes" ]]; then
         print_section_header "Finalizing Git Setup"
@@ -604,10 +608,6 @@ main() {
         log "Skipping Git repository initialization as requested by the user."
     fi
 
-    # 7. Rename the project directory
-    print_section_header "Renaming Project Directory"
-    rename_project_directory
-
     # 8. Self-destruct Script
     print_section_header "Cleaning Up"
     clean_up_script
@@ -616,7 +616,7 @@ main() {
     log "END OF LOG"
 
     # 9. Display Final Message
-    display_final_message
+    display_final_message | tee -a "$LOGFILE"
 }
 
 # --- Script Execution ---
