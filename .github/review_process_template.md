@@ -103,7 +103,7 @@ Provide clear instructions on how reviewers can test and validate your changes.
 Be as precise as possible.
 
 - `Step 1:` Check out this branch locally: `git checkout your-feature-branch`
-- `Step 2:` Install dependencies in the project root: `npm install`
+- `Step 2:` Install dependencies in the project root: `npm ci`
 - `Step 3:` Run all unit tests: `npm test`
 - `Step 4:` To manually verify the new date formatting, start the development
   server in the `server` directory: `cd server && npm run dev`

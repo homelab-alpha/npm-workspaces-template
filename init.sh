@@ -309,7 +309,7 @@ update_readme_file() {
 From the root directory of your project, install all required dependencies:
 
 \`\`\`bash
-npm install
+npm ci
 \`\`\`
 
 ## Development
@@ -528,7 +528,7 @@ display_final_message() {
         echo "  4. Push your initial commit to GitHub:"
         echo "     git push -u origin main"
         echo "  5. Install project dependencies:"
-        echo "     npm install"
+        echo "     npm ci"
         echo "  6. Start developing your application:"
         echo "     npm run dev"
     else
@@ -536,7 +536,7 @@ display_final_message() {
         echo "  2. Initialize a Git repository if you wish:"
         echo "     git init"
         echo "  3. Install project dependencies:"
-        echo "     npm install"
+        echo "     npm ci"
         echo "  4. Start developing your application:"
         echo "     npm run dev"
     fi
