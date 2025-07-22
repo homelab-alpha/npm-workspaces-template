@@ -287,8 +287,8 @@ update_configuration_files() {
     # Update The About vue
     safe_sed_update "./client/src/components/TheAbout.vue" \
         -e "s|https://github.com/homelab-alpha/npm-workspaces-template|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/CONTRIBUTING.md|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE|"
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/CONTRIBUTING.md|" \
+        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/LICENSE|"
 }
 
 update_readme_file() {
@@ -441,7 +441,7 @@ then \`markdown:lint\` for all Markdown files.
 
 ## License
 
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE) file for more details.
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/master/LICENSE) file for more details.
 
 EOF
   )
@@ -532,9 +532,11 @@ display_final_message() {
             # For private repositories, use SSH if preferred or the same HTTPS
             # For simplicity, we'll stick to HTTPS, but SSH is common for private repos
             git_remote_url="git@github.com:$GITHUB_USERNAME/$PROJECT_NAME.git"
-            log "Configured Git remote for private repository: $git_remote_url"
+            # ? Note: Logging is currently disabled — not needed at this stage
+            # log "Configured Git remote for private repository: $git_remote_url"
         else
-            log "Configured Git remote for public repository: $git_remote_url"
+            # ? Note: Logging is currently disabled — not needed at this stage
+            # log "Configured Git remote for public repository: $git_remote_url"
         fi
 
         # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
@@ -542,7 +544,7 @@ display_final_message() {
         echo "  3. Link your local repository to the remote:"
         echo "     git remote add origin $git_remote_url"
         echo "  4. Push your initial commit to GitHub:"
-        echo "     git push -u origin main"
+        echo "     git push -u origin master"
         echo "  5. Install project dependencies:"
         echo "     npm install"
         echo "  6. Start developing your application:"
