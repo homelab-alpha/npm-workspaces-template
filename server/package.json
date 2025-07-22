@@ -1,7 +1,7 @@
 {
-  "name": "npm-workspaces-template-server",
+  "name": "backend-npm-workspaces-template",
   "version": "0.1.0",
-  "description": "A boilerplate for NPM Workspaces - server",
+  "description": "Server-side for npm Workspaces Template",
   "private": true,
   "type": "module",
   "packageManager": ">=npm@10.9.0",
