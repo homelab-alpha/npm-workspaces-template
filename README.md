@@ -160,13 +160,10 @@ cd npm-workspaces-template
 
 ### Step 3: Initialize the project
 
-> [!WARNING]
+> [!Note]
 >
-> **Status:** Work in Progress (WIP)
->
-> The initialization script is currently **functional**, but still under
-> **active development**. New features and functionality will be added over time,
-> and existing elements may change **without prior notice**.
+> The initialization script is fully **functional**. New features and updates
+> will be introduced over time.
 
 Run the `init.sh` script to prepare the npm workspaces for your new project.
 This script handles the initial setup, including cleaning up template-specific
