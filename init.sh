@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-22T08:21:51+02:00
+# Date: 2025-07-22T11:28:30+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -292,11 +292,6 @@ update_configuration_files() {
     safe_sed_update "./LICENSE" \
         -e "s|   Copyright 2025 Homelab-Alha ( GJS )|   Copyright $YEAR $AUTHOR_NAME|"
 
-    # Update The About vue
-    safe_sed_update "./client/src/components/TheAbout.vue" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/CONTRIBUTING.md|" \
-        -e "s|https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE|https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/blob/main/LICENSE|"
 }
 
 update_readme_file() {
@@ -538,16 +533,7 @@ display_final_message() {
         # Determine the Git remote URL based on repository visibility
         local git_remote_url="https://github.com/$GITHUB_USERNAME/$PROJECT_NAME.git"
         if [[ "${REPOSITORY_VISIBILITY,,}" == "private" ]]; then
-            # For private repositories, use SSH if preferred or the same HTTPS
-            # For simplicity, we'll stick to HTTPS, but SSH is common for private repos
             git_remote_url="git@github.com:$GITHUB_USERNAME/$PROJECT_NAME.git"
-            # ? Note: Logging is currently disabled — not needed at this stage
-            # log "Configured Git remote for private repository: $git_remote_url"
-            echo # Blank line for spacing; maintains structure in if/else/fi blocks
-        else
-            # ? Note: Logging is currently disabled — not needed at this stage
-            # log "Configured Git remote for public repository: $git_remote_url"
-            echo # Blank line for spacing; maintains structure in if/else/fi blocks
         fi
 
         # If Git was initialized, provide steps for linking to a remote repository and making the initial push.
