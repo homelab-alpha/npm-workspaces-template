@@ -51,6 +51,8 @@ using **npm workspaces**. It provides a structured setup with **client** and
     &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#quick-installation">Quick Installation</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites-1">Prerequisites</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#run-the-quick-script">Run the Quick script</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
   </p>
 </details>
@@ -391,70 +393,81 @@ This will:
 - Open your default browser to [http://localhost:5173](http://localhost:5173).
 - Start the development servers for both the **client** and the **server** side.
 
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Git](https://git-scm.com/downloads) (version: 2.50.0 or higher recommended)
+- [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher recommended)
+- [npm](https://www.npmjs.com/get-npm) (version: 10.9.0 or higher recommended)
+- [Visual Studio Code](https://code.visualstudio.com/Download) (Optional)
+
+### Run the Quick script
+
+Open your terminal and copy and paste the following code:
+
 ```bash
-{
-  #!/usr/bin/env bash
+#!/usr/bin/env bash
 
-  # Strict Mode
-  # -e: Exit immediately if a command exits with a non-zero status.
-  # -o pipefail: The return value of a pipeline is the status of the last command
-  #    to exit with a non-zero status, or zero if no command exited with a
-  #    non-zero status.
-  # -u: Treat unset variables as an error when substituting.
+# Strict Mode
+# -e: Exit immediately if a command exits with a non-zero status.
+# -o pipefail: The return value of a pipeline is the status of the last command
+#    to exit with a non-zero status, or zero if no command exited with a
+#    non-zero status.
+# -u: Treat unset variables as an error when substituting.
 
-  set -eo pipefail
-  set -u
+set -eo pipefail
+set -u
 
-  # --- Initial Setup ---
+# --- Initial Setup ---
+echo # Blank line for spacing
+echo "Cloning repository..."
+git clone https://github.com/homelab-alpha/npm-workspaces-template.git
+cd npm-workspaces-template
+
+echo # Blank line for spacing
+echo "Running initialization script..."
+./init.sh
+# Re-evaluate shell's current directory to apply changes from init.sh
+cd .
+
+# --- OS-specific Command Setup ---
+# Set commands based on the detected Operating System to ensure compatibility.
+if [[ "$OSTYPE" == "darwin"* ]]; then # macOS
+  SLEEP_CMD="sleep 5"
+  OPEN_CMD="open"
+elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then # Windows
+  SLEEP_CMD="timeout /T 5 /NOBREAK >nul"
+  OPEN_CMD="start"
+else # Linux
+  SLEEP_CMD="sleep 5"
+  OPEN_CMD="xdg-open"
+fi
+
+# --- Execution Sequence ---
+echo # Blank line for spacing
+echo "Installing npm dependencies..."
+npm install
+
+# Launch Visual Studio Code if the 'code' command is available.
+if command -v code &> /dev/null; then
   echo # Blank line for spacing
-  echo "Cloning repository..."
-  git clone https://github.com/homelab-alpha/npm-workspaces-template.git
-  cd npm-workspaces-template
-
+  echo "Launching Visual Studio Code..."
+  code .
+else
   echo # Blank line for spacing
-  echo "Running initialization script..."
-  ./init.sh
-  # Re-evaluate shell's current directory to apply changes from init.sh
-  cd .
-
-  # --- OS-specific Command Setup ---
-  # Set commands based on the detected Operating System to ensure compatibility.
-  if [[ "$OSTYPE" == "darwin"* ]]; then # macOS
-    SLEEP_CMD="sleep 5"
-    OPEN_CMD="open"
-  elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then # Windows
-    SLEEP_CMD="timeout /T 5 /NOBREAK >nul"
-    OPEN_CMD="start"
-  else # Linux
-    SLEEP_CMD="sleep 5"
-    OPEN_CMD="xdg-open"
-  fi
-
-  # --- Execution Sequence ---
-  echo # Blank line for spacing
-  echo "Installing npm dependencies..."
-  npm install
-
-  # Launch Visual Studio Code if the 'code' command is available.
-  if command -v code &> /dev/null; then
-    echo # Blank line for spacing
-    echo "Launching Visual Studio Code..."
-    code .
-  else
-    echo # Blank line for spacing
-    echo "Visual Studio Code 'code' command not found, skipping."
-    eval "$SLEEP_CMD"
-  fi
-
-  echo # Blank line for spacing
-  echo "Opening application in browser at http://localhost:5173..."
-  $OPEN_CMD http://localhost:5173/
+  echo "Visual Studio Code 'code' command not found, skipping."
   eval "$SLEEP_CMD"
+fi
 
-  echo # Blank line for spacing
-  echo "Starting development server... (Press Ctrl+C to stop)"
-  npm run dev
-}
+echo # Blank line for spacing
+echo "Opening application in browser at http://localhost:5173..."
+$OPEN_CMD http://localhost:5173/
+eval "$SLEEP_CMD"
+
+echo # Blank line for spacing
+echo "Starting development server... (Press Ctrl+C to stop)"
+npm run dev
 ```
 
 > [!TIP]
@@ -470,6 +483,8 @@ This will:
 > These logs are from the browser and may include initial connection errors or
 > additional messages when attempting to open `http://localhost:5173`. This is
 > expected behavior, as the development server may not have fully started yet.
+
+[⬆️ Go Back to Available Commands](#available-commands)
 
 ## License
 
