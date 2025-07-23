@@ -50,6 +50,7 @@ using **npm workspaces**. It provides a structured setup with **client** and
     &nbsp;&nbsp;&nbsp; <a href="#contributing">Contributing</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#quick-installation">Quick Installation</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
   </p>
 </details>
@@ -68,6 +69,7 @@ using **npm workspaces**. It provides a structured setup with **client** and
 ### To-Do List
 
 - [ ] Create a final pre-release checklist.
+- [ ] Check and update linking in isseu and discussion templates.
 
 #### Client
 
@@ -371,9 +373,103 @@ No known issues at this time.
 If you discover a bug or experience an issue not listed here, please help us
 improve by [opening an issue on GitHub](https://github.com/homelab-alpha/npm-workspaces-template/issues/new/choose).
 
-Last updated: Jul 20, 2025
-
 [⬆️ Go Back to Getting Started](#getting-started)
+
+## Quick Installation
+
+Get started in seconds by running the command below in your terminal.
+This single command streamlines the setup process for you.
+
+This will:
+
+- Clone the **npm Workspaces Template** repository.
+- Run the included `init.sh` initialization script.
+- Re-evaluate the shell's current directory to reflect any changes made by the
+  initialization script.
+- Install all npm dependencies.
+- Launch **Visual Studio Code** in the project folder.
+- Open your default browser to [http://localhost:5173](http://localhost:5173).
+- Start the development servers for both the **client** and the **server** side.
+
+```bash
+{
+  #!/usr/bin/env bash
+
+  # Strict Mode
+  # -e: Exit immediately if a command exits with a non-zero status.
+  # -o pipefail: The return value of a pipeline is the status of the last command
+  #    to exit with a non-zero status, or zero if no command exited with a
+  #    non-zero status.
+  # -u: Treat unset variables as an error when substituting.
+
+  set -eo pipefail
+  set -u
+
+  # --- Initial Setup ---
+  echo # Blank line for spacing
+  echo "Cloning repository..."
+  git clone https://github.com/homelab-alpha/npm-workspaces-template.git
+  cd npm-workspaces-template
+
+  echo # Blank line for spacing
+  echo "Running initialization script..."
+  ./init.sh
+  # Re-evaluate shell's current directory to apply changes from init.sh
+  cd .
+
+  # --- OS-specific Command Setup ---
+  # Set commands based on the detected Operating System to ensure compatibility.
+  if [[ "$OSTYPE" == "darwin"* ]]; then # macOS
+    SLEEP_CMD="sleep 5"
+    OPEN_CMD="open"
+  elif [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then # Windows
+    SLEEP_CMD="timeout /T 5 /NOBREAK >nul"
+    OPEN_CMD="start"
+  else # Linux
+    SLEEP_CMD="sleep 5"
+    OPEN_CMD="xdg-open"
+  fi
+
+  # --- Execution Sequence ---
+  echo # Blank line for spacing
+  echo "Installing npm dependencies..."
+  npm install
+
+  # Launch Visual Studio Code if the 'code' command is available.
+  if command -v code &> /dev/null; then
+    echo # Blank line for spacing
+    echo "Launching Visual Studio Code..."
+    code .
+  else
+    echo # Blank line for spacing
+    echo "Visual Studio Code 'code' command not found, skipping."
+    eval "$SLEEP_CMD"
+  fi
+
+  echo # Blank line for spacing
+  echo "Opening application in browser at http://localhost:5173..."
+  $OPEN_CMD http://localhost:5173/
+  eval "$SLEEP_CMD"
+
+  echo # Blank line for spacing
+  echo "Starting development server... (Press Ctrl+C to stop)"
+  npm run dev
+}
+```
+
+> [!TIP]
+> After completing the Quick Installation, your browser should automatically
+> open to the application. You may need to refresh the page (using
+> **F5** or **Ctrl+R**) to ensure the latest content is loaded; or if you
+> encounter any issues, please open your web browser and navigate to
+> [http://localhost:5173](http://localhost:5173) manually.
+
+> [!NOTE]
+> When using the **Quick Installation**, you may encounter extra logs at
+> `Opening application in browser at http://localhost:5173...` in the terminal.
+> These logs are from the browser and may include initial connection errors or
+> additional messages when attempting to open `http://localhost:5173`. This is
+> expected behavior, as the development server may not have fully started yet.
 
 ## License
 
