@@ -547,12 +547,10 @@ display_final_message() {
         echo "  6. Start developing your application:"
         echo "     npm run dev"
     else
-        # If Git was not initialized, provide the option to do so.
-        echo "  2. Initialize a Git repository if you wish:"
-        echo "     git init"
-        echo "  3. Install project dependencies:"
+        # If Git was not initialized, provide the final steps.
+        echo "  2. Install project dependencies:"
         echo "     npm install"
-        echo "  4. Start developing your application:"
+        echo "  3. Start developing your application:"
         echo "     npm run dev"
     fi
 
