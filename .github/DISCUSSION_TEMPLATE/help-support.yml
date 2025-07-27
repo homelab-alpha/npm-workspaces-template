@@ -6,10 +6,10 @@ body:
     attributes:
       label: ⚠️ Please check if your question has already been reported
       description: |
-        To avoid duplicate reports, please search for existing issues before submitting a new one. You can find the list of current issues **[HERE](https://github.com/homelab-alpha/npm-workspaces-template/issues?q=is%3Aissue%20sort%3Acreated-desc%20)**.
+        To avoid duplicate reports, please search for existing **[ISSUES](https://github.com/homelab-alpha/npm-workspaces-template/issues?q=is%3Aissue%20sort%3Acreated-desc%20)** and **[DISCUSSIONS](https://github.com/homelab-alpha/npm-workspaces-template/discussions)** before submitting a new one.
       options:
         - label: |
-            I have searched the [existing issues](https://github.com/homelab-alpha/npm-workspaces-template/issues?q=is%3Aissue%20sort%3Acreated-desc%20) and found no similar reports.
+            I have searched the [existing issues](https://github.com/homelab-alpha/npm-workspaces-template/issues?q=is%3Aissue%20sort%3Acreated-desc%20) and [discussions](https://github.com/homelab-alpha/npm-workspaces-template/discussions), and found no similar reports.
           required: true
 
   - type: checkboxes
