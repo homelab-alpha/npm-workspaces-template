@@ -3,7 +3,10 @@
 [![Linting](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml)
 [![CodeQL](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/codeql.yml)
 [![Last commit](https://img.shields.io/github/last-commit/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Last%20commit&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/commits/main/)
-[![Repo Size](https://img.shields.io/github/repo-size/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Repo%20size&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template)
+![Repo Size](https://img.shields.io/github/repo-size/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Repo%20size&labelColor=313A41&color=BA935B&cacheSeconds=3600)
+[![Changelog](https://img.shields.io/badge/Changelog-Keep%20a%20Changelog%20v1.1.1-313A41?style=flat&logo=github&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CHANGELOG.md)
+[![Semantic Versioning](https://img.shields.io/badge/SemVer-2.0.0-313A41?style=flat&logo=github&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://github.com/semver/semver/blob/master/semver.md)
+
 <!-- [![Downloads](https://img.shields.io/github/downloads/homelab-alpha/npm-workspaces-template/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Downloads&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/releases) -->
 
 Welcome to the Homelab-Alpha npm Workspaces Template repository!
