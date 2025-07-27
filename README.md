@@ -75,7 +75,7 @@ using **npm workspaces**. It provides a structured setup with **client** and
 ### To-Do List
 
 - [ ] Create a final pre-release checklist.
-- [ ] Check and update linking in isseu and discussion templates.
+- [x] Check and update linking in isseu and discussion templates.
 
 #### Client
 
