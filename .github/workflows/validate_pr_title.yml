@@ -26,7 +26,7 @@ jobs:
             fix
             docs
             style
-            refact
+            refactor
             perf
             test
             chore
@@ -39,10 +39,8 @@ jobs:
             The subject "{subject}" found in the pull request title "{title}"
             didn't match the configured pattern. Please ensure that the subject
             doesn't start with an uppercase character and uses the imperative mood.
-            Please refer to the Commit Message Guidelines:
-            https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md#commit-message-guidelines
           ignoreLabels: |
             bot
             ignore-semantic-pull-request
-          headerPattern: '^(?<type>[a-z]+)(?:\((?<scope>[a-z]*)\))?: (?<subject>.*)$'
+          headerPattern: '^(?<type>[a-z]+)(?:\((?<scope>[a-z\-]+)\))?: (?<subject>.*)$'
           headerPatternCorrespondence: type, scope, subject
