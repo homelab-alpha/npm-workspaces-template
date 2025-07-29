@@ -22,8 +22,8 @@
     "server:lint": "npm run lint --workspace=server",
     "dev": "run-p client:dev server:dev",
     "build": "npm run client:build",
-    "markdown:format:check": "markdownlint \"**/*.md\" --config \".markdownlint.jsonc\" --ignore \"**/node_modules/**\"",
-    "markdown:lint": "markdownlint \"**/*.md\" --fix --config \".markdownlint.jsonc\" --ignore \"**/node_modules/**\"",
+    "markdown:format:check": "prettier --check \"./*.md\"",
+    "markdown:lint": "prettier --write \"./*.md\"",
     "format:check": "run-s client:format:check server:format:check markdown:format:check",
     "lint": "run-s client:lint server:lint markdown:lint"
   },
@@ -51,6 +51,6 @@
       "prettier --write"
     ],
     "**/*.{json,css,html,vue}": "prettier --write",
-    "**/*.md": "markdownlint --fix"
+    "./*.md": "prettier --write"
   }
 }
