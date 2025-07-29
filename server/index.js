@@ -3,8 +3,8 @@ import { config } from "dotenv";
 config(); // Call the config function to load environment variables
 
 // Import necessary modules using ES module syntax.
-import express from "express";
 import cors from "cors";
+import express from "express";
 import rateLimit from "express-rate-limit";
 
 const app = express();

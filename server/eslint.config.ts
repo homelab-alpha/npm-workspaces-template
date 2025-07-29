@@ -1,37 +1,32 @@
-import pluginVitest from "@vitest/eslint-plugin";
-import skipFormatting from "@vue/eslint-config-prettier/skip-formatting";
-import {
-  defineConfigWithVueTs,
-  vueTsConfigs,
-} from "@vue/eslint-config-typescript";
-import pluginPlaywright from "eslint-plugin-playwright";
-import pluginVue from "eslint-plugin-vue";
-import { globalIgnores } from "eslint/config";
+// Import necessary modules for ESLint configuration.
+import js from "@eslint/js";
+import prettierConfig from "eslint-config-prettier";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
-// To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
-// import { configureVueProject } from '@vue/eslint-config-typescript'
-// configureVueProject({ scriptLangs: ['ts', 'tsx'] })
-// More info at https://github.com/vuejs/eslint-config-typescript/#advanced-setup
-
-export default defineConfigWithVueTs(
+// `tseslint.config` is a helper function for creating a type-safe ESLint config.
+export default tseslint.config(
+  // Global ignores for files and directories that should never be linted.
   {
-    name: "app/files-to-lint",
-    files: ["**/*.{ts,mts,tsx,vue}"],
+    ignores: ["**/dist/", "**/node_modules/"],
   },
 
-  globalIgnores(["**/dist/**", "**/dist-ssr/**", "**/coverage/**"]),
+  // Apply the recommended base rules from ESLint for JavaScript.
+  js.configs.recommended,
 
-  pluginVue.configs["flat/essential"],
-  vueTsConfigs.recommended,
-
+  // Specific configuration for all JavaScript files in the project.
   {
-    ...pluginVitest.configs.recommended,
-    files: ["src/**/__tests__/*"],
+    files: ["**/*.{js,mjs}"],
+    languageOptions: {
+      ecmaVersion: "latest", // Use the latest ECMAScript features.
+      sourceType: "module", // The project uses ES modules (`import`/`export`).
+      globals: {
+        ...globals.node, // Enable all Node.js global variables (e.g., `process`, `__dirname`).
+      },
+    },
   },
 
-  {
-    ...pluginPlaywright.configs["flat/recommended"],
-    files: ["e2e/**/*.{test,spec}.{js,ts,jsx,tsx}"],
-  },
-  skipFormatting
+  // This must be the last element to override other configs.
+  // It disables ESLint rules that might conflict with Prettier's formatting.
+  prettierConfig
 );
