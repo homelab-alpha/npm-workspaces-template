@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-22T12:42:06+02:00
+# Date: 2025-07-29T11:36:09+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -292,6 +292,9 @@ update_configuration_files() {
     safe_sed_update "./LICENSE" \
         -e "s|   Copyright 2025 Homelab-Alha ( GJS )|   Copyright $YEAR $AUTHOR_NAME|"
 
+    # Update CODE OF CONDUCT
+    safe_sed_update "./CODE_OF_CONDUCT.md" \
+        -e "s| to the \\[Homelab-Alpha team\\](mailto:homelab.api@gmail.com)| to \\[$AUTHOR_NAME\\](mailto:$AUTHOR_EMAIL)|"
 }
 
 update_readme_file() {
