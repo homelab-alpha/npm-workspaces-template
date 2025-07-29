@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-29T11:36:09+02:00
+# Date: 2025-07-29T11:56:59+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -42,6 +42,9 @@ readonly LOGFILE
 
 YEAR=$(date +'%Y')
 readonly YEAR
+
+DATE=$(date +'%Y-%m-%d')
+readonly DATE
 
 # This variable will store the original directory name
 ORIGINAL_DIR_NAME=$(basename "$PWD")
@@ -458,6 +461,45 @@ EOF
     log "README.md updated successfully."
 }
 
+update_changelog_file() {
+    log "Updating CHANGELOG.md with custom content."
+
+    # Constructing the CHANGELOG content using a heredoc for multi-line string assignment.
+    changelog_content=$(
+      cat << EOF
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased] - $DATE
+
+### Added
+
+- Coming soon.
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+[Unreleased]: https://github.com/$GITHUB_USERNAME/$PROJECT_NAME/compare/main...main
+EOF
+  )
+
+    # Writing the constructed content to the CHANGELOG.md file, overwriting any
+    # existing content.
+    echo "$changelog_content" > CHANGELOG.md
+    log "CHANGELOG.md updated successfully."
+}
+
 # Initializes a new Git repository and creates the first commit.
 finalize_setup() {
     run_and_log "initialize new Git repository" git init
@@ -595,11 +637,15 @@ main() {
     print_section_header "Updating README File"
     update_readme_file
 
-    # 6. Rename the project directory
+    # 6. Update Readme Files
+    print_section_header "Updating CHANGELOG File"
+    update_changelog_file
+
+    # 7. Rename the project directory
     print_section_header "Renaming Project Directory"
     rename_project_directory
 
-    # 7. Finalize Git Setup (Optional)
+    # 8. Finalize Git Setup (Optional)
     # Check the user's choice for Git initialization.
     if [[ "${INITIALIZE_GIT,,}" == "y" || "${INITIALIZE_GIT,,}" == "yes" ]]; then
         print_section_header "Finalizing Git Setup"
@@ -609,14 +655,14 @@ main() {
         log "Skipping Git repository initialization as requested by the user."
     fi
 
-    # 8. Self-destruct Script
+    # 9. Self-destruct Script
     print_section_header "Cleaning Up"
     clean_up_script
 
     log "Project initialization completed successfully. Enjoy your new project!"
     log "END OF LOG"
 
-    # 9. Display Final Message
+    # 10. Display Final Message
     display_final_message | tee -a "$LOGFILE"
 }
 
