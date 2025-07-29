@@ -77,7 +77,6 @@ using **npm workspaces**. It provides a structured setup with **client** and
 ### To-Do List
 
 - [ ] Create a final pre-release checklist.
-- [x] Check and update linking in isseu and discussion templates.
 
 #### Client
 
@@ -96,15 +95,10 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 #### Server
 
-- [x] Set up core linting tools.
-  - [ ] Configure ESLint for JavaScript/TypeScript standards.
-  - [ ] Configure Prettier for consistent code formatting.
+- [ ] Pending tasks (to be defined).
 
 #### Documentation
 
-- [x] Write detailed usage and setup instructions for `init.sh`.
-- [x] Finalize and update **Step 3: Prepare the npm workspaces** once `init.sh`
-      is complete.
 - [ ] Expand documentation for Docker setup, usage, and environment-specific notes.
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
 - [ ] Remove the **Caution** notice once the **Docker & Containerization** setup
