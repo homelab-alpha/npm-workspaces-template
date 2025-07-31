@@ -312,6 +312,7 @@ update_readme_file() {
 ## Getting Started
 
 > [!NOTE]
+>
 > Install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
 > It will help you keep your dependencies up to date automatically.
 
@@ -511,7 +512,7 @@ finalize_setup() {
 
 # Removes the initialization script itself.
 clean_up_script() {
-    run_and_log "remove initialization script" rm -- "$SCRIPT_NAME"
+    run_and_log "remove initialization script" rm -R -- "./scripts/$SCRIPT_NAME" "./scripts/"
 }
 
 # Rename the project directory.
