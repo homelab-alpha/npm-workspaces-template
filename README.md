@@ -174,7 +174,7 @@ This script handles the initial setup, including cleaning up template-specific
 files and configuring the project for use.
 
 ```bash
-./init.sh
+./scripts/init.sh
 ```
 
 This script will guide you through the following:
@@ -427,7 +427,7 @@ cd npm-workspaces-template
 
 echo # Blank line for spacing
 echo "Running initialization script..."
-./init.sh
+./scripts/init.sh
 # Re-evaluate shell's current directory to apply changes from init.sh
 cd .
 
