@@ -23,7 +23,7 @@ set -u
 
 # Filename: init.sh
 # Author: GJS (homelab-alpha)
-# Date: 2025-07-29T11:56:59+02:00
+# Date: 2025-07-31T10:21:30+02:00
 # Version: 0.1.0
 
 # Description: This script automates the setup of a new project from the template.
@@ -192,6 +192,7 @@ clean_up_template_files() {
         ".gitleaksignore"
         "CODE_STYLE_AND_STANDARDS_GUIDES.md"
         "CONTRIBUTING.md"
+        "MAINTAINERS.md"
         "SECURITY.md"
     )
 
