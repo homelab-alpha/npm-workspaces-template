@@ -1,7 +1,7 @@
 {
   "name": "npm-workspaces-template",
   "version": "0.1.0",
-  "description": "A boilerplate for NPM Workspaces",
+  "description": "A boilerplate for npm Workspaces",
   "private": true,
   "packageManager": ">=npm@10.9.0",
   "engines": {
