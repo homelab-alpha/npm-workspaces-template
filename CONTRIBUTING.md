@@ -49,9 +49,9 @@ focused on actionable tasks and can often provide quicker answers or solutions.
 
 ### Issues
 
-- **Check Existing Issues**: Take a look at our list of [all issues] to see
-  if someone is already working on the problem or feature you're interested in,
-  or if it has already been addressed. If there's an open issue, consider
+- **Check Existing Issues**: Take a look at our list of [all issues] to see if
+  someone is already working on the problem or feature you're interested in, or
+  if it has already been addressed. If there's an open issue, consider
   contributing to it.
 - **Creating New Issues**: If you're opening a new issue, ensure it's clear and
   concise. Provide detailed descriptions, including steps to reproduce any
@@ -73,7 +73,8 @@ We follow the [GitHub flow] for our versioning workflow.
 When you're working on something:
 
 1. Fork the repository
-2. Clone your forked repository: `git clone https://github.com/your-username/npm-workspaces-template.git`
+2. Clone your forked repository:
+   `git clone https://github.com/your-username/npm-workspaces-template.git`
 3. Install the dependencies `npm ci`
 4. Create a new branch for your feature or bug fix
 5. Submit a pull request from your branch to our `main` branch
@@ -85,17 +86,17 @@ When you're working on something:
 - **Style Guide**: Make sure your pull requests adhere to our [Code Style +
   Standards Guides].
 - **Documentation Guidelines**: When you contribute new features or make
-  significant changes to the code, please also update the relevant documentation.
-  This ensures that the project remains easy to understand and use for all
-  contributors and users. Good documentation includes clear explanations,
-  examples, and any necessary configuration details.
-- **Testing Guidelines**: When submitting code, please ensure it's **well-tested**.
-  Include unit, integration, or end-to-end tests where appropriate to cover your
-  changes and prevent regressions. If you're adding a new feature, please include
-  tests for its functionality. For bug fixes, consider adding a test that
-  reproduces the bug before your fix, and then passes after the fix.
-  Explain how you've tested your changes in your pull request description. If
-  you've run specific commands to test, include them.
+  significant changes to the code, please also update the relevant
+  documentation. This ensures that the project remains easy to understand and
+  use for all contributors and users. Good documentation includes clear
+  explanations, examples, and any necessary configuration details.
+- **Testing Guidelines**: When submitting code, please ensure it's
+  **well-tested**. Include unit, integration, or end-to-end tests where
+  appropriate to cover your changes and prevent regressions. If you're adding a
+  new feature, please include tests for its functionality. For bug fixes,
+  consider adding a test that reproduces the bug before your fix, and then
+  passes after the fix. Explain how you've tested your changes in your pull
+  request description. If you've run specific commands to test, include them.
 
 ### Pull Request Size Guidelines
 
@@ -120,11 +121,11 @@ into **smaller, logical Pull Requests**.
    independently. Think about a new feature, a bug fix, a refactoring of a
    specific component, or a documentation update.
 2. **Create Separate Branches**: For each logical unit, create a new branch.
-3. **Submit Incremental PRs**: Submit PRs for each individual branch.
-   Ensure each PR has a clear, well-defined goal and focuses on a single change.
-4. **Reference Related PRs**: If PRs are dependent on each other, reference
-   the earlier PR in the description of the subsequent PR (e.g., "This builds
-   upon #PR-number").
+3. **Submit Incremental PRs**: Submit PRs for each individual branch. Ensure
+   each PR has a clear, well-defined goal and focuses on a single change.
+4. **Reference Related PRs**: If PRs are dependent on each other, reference the
+   earlier PR in the description of the subsequent PR (e.g., "This builds upon
+   #PR-number").
 
 <br />
 
@@ -164,12 +165,19 @@ Thanks for contemplating contributing to Homelab-Alpha. Together, we can elevate
 and refine our project for the entire community to benefit from. We eagerly
 anticipate your contributions!
 
-[all issues]: https://github.com/homelab-alpha/npm-workspaces-template/issues?q=sort%3Acreated-desc
-[Code of Conduct]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md
-[Code Style + Standards Guides]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md
-[Discussions]: https://github.com/homelab-alpha/npm-workspaces-template/discussions
+[all issues]:
+  https://github.com/homelab-alpha/npm-workspaces-template/issues?q=sort%3Acreated-desc
+[Code of Conduct]:
+  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md
+[Code Style + Standards Guides]:
+  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md
+[Discussions]:
+  https://github.com/homelab-alpha/npm-workspaces-template/discussions
 [GitHub flow]: https://guides.github.com/introduction/flow
-[feature request]: https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/feature-request
-[LICENSE]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE
-[open pull requests]: https://github.com/homelab-alpha/npm-workspaces-template/pulls?q=is%3Apr%20is%3Aopen%20sort%3Acreated-desc
+[feature request]:
+  https://github.com/homelab-alpha/npm-workspaces-template/discussions/categories/feature-request
+[LICENSE]:
+  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE
+[open pull requests]:
+  https://github.com/homelab-alpha/npm-workspaces-template/pulls?q=is%3Apr%20is%3Aopen%20sort%3Acreated-desc
 [pull request]: https://github.com/homelab-alpha/npm-workspaces-template/pulls

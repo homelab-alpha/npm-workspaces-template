@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # - name: Run ESLint across all workspaces
-      #   run: npm run lint
+      - name: Run ESLint across all workspaces
+        run: npm run lint
 
       - name: Check formatting across all workspaces
         run: npm run format:check
