@@ -1,1 +1,35 @@
+# Prettier ignore file.
+#
+# This file tells Prettier which files NOT to format.
+# Patterns listed here should typically be files or directories
+# that are tracked by Git but should not be formatted.
+
+# Build and output directories
+# Prettier should not format compiled or generated code.
+.git/
+.vscode/
+build/
+dist/
+playwright-report/
+test-results/
+
+# Dependency directories
+# Node modules should never be formatted.
+node_modules/
+
+# Lock files
+# Lock files are auto-generated and should not be formatted.
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Configuration files and logs
+# Ignore logs and configuration files that can't be formatted.
+!.env.example
+.env
+.env.*
+*.log
+
+# Other specific files
+# Add other specific files or directories you want to ignore.
 LICENSE
