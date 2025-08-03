@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This guide helps contributors understand how we write code in the NPM
-Workspaces Template repository. We use **npm workspaces** for a **Node.js**
-project, splitting it into a `client` (Vue.js) and `server` (Express.js,
-TypeScript) part, with **Docker** for easy setup. Following these guidelines
-keeps our code consistent and easy to manage.
+This guide helps contributors understand how we write code in the npm Workspaces
+Template repository. We use **npm workspaces** for a **Node.js** project,
+splitting it into a `client` (Vue.js) and `server` (Express.js, TypeScript)
+part, with **Docker** for easy setup. Following these guidelines keeps our code
+consistent and easy to manage.
 
 ## Our Main Guidelines
 
@@ -17,8 +17,8 @@ keeps our code consistent and easy to manage.
 - **Keep it Simple**: Write clear, easy-to-read code. Use names that make sense
   for variables, functions, and classes.
 - **Add Comments (When Needed)**: Explain complex parts of your code briefly.
-- **Break Down Tasks**: Organize your code into small, reusable pieces
-  (modules or components).
+- **Break Down Tasks**: Organize your code into small, reusable pieces (modules
+  or components).
 - **Handle Errors**: Make sure your code can handle errors gracefully and logs
   them properly.
 
@@ -64,8 +64,8 @@ Since we use TypeScript, Vue.js, and Node.js:
 - **Component Names**:
   - Files: `PascalCase` (e.g., `UserProfile.vue`).
   - Usage: `kebab-case` (e.g., `<user-profile>`).
-- **Props & Emits**: Define props with types; use `kebab-case` for custom
-  events (emits).
+- **Props & Emits**: Define props with types; use `kebab-case` for custom events
+  (emits).
 - **Styling**: Use scoped CSS for component-specific styles.
 
 ### Node.js/Express.js (Server Side)
@@ -93,8 +93,8 @@ Name your branches to clearly describe their purpose.
   - `refactor/`: Code restructuring.
   - `chore/`: General tasks.
   - `hotfix/`: Urgent production fixes.
-- **Description**: Be specific and brief. Avoid vague names. Aim for
-  under 50 characters.
+- **Description**: Be specific and brief. Avoid vague names. Aim for under 50
+  characters.
 
 ### Examples of Valid Branch Names
 
@@ -128,8 +128,8 @@ Always write commit messages in **English**.
     - `test`: Test updates.
     - `chore`: General maintenance, build updates.
     - `revert`: Reverting a previous commit.
-  - **Scope (Optional)**: What part of the code changed (e.g., `(auth)`,
-    `(UI)`, `(server)`).
+  - **Scope (Optional)**: What part of the code changed (e.g., `(auth)`, `(UI)`,
+    `(server)`).
   - **Subject**: Short, in **imperative mood** (e.g., "Add user", "Fix bug").
     Keep it **under 50 characters**.
   - **Example**: `feat(auth): add user login feature`

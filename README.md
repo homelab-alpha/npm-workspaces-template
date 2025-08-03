@@ -13,9 +13,9 @@
 
 Welcome to the Homelab-Alpha npm Workspaces Template repository!
 
-This project is a boilerplate for Node.js projects
-using **npm workspaces**. It provides a structured setup with **client** and
-**server** workspaces for modular full-stack development.
+This project is a boilerplate for Node.js projects using **npm workspaces**. It
+provides a structured setup with **client** and **server** workspaces for
+modular full-stack development.
 
 <details>
   <summary><strong>Table of Contents</strong> (click to expand)</summary>
@@ -71,8 +71,8 @@ using **npm workspaces**. It provides a structured setup with **client** and
 >
 > This project is currently under **active development**. Its structure,
 > features, and content are subject to change **frequently and without notice**.
-> At this time, **contributions are not being accepted**. Community contributions
-> will be welcomed once the project reaches a more stable state.
+> At this time, **contributions are not being accepted**. Community
+> contributions will be welcomed once the project reaches a more stable state.
 
 ### To-Do List
 
@@ -99,7 +99,8 @@ using **npm workspaces**. It provides a structured setup with **client** and
 
 #### Documentation
 
-- [ ] Expand documentation for Docker setup, usage, and environment-specific notes.
+- [ ] Expand documentation for Docker setup, usage, and environment-specific
+      notes.
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
 - [ ] Remove the **Caution** notice once the **Docker & Containerization** setup
       is fully functional.
@@ -109,11 +110,11 @@ using **npm workspaces**. It provides a structured setup with **client** and
 This template offers the following key features:
 
 - **npm Workspaces**: Efficiently manages multi-package repositories.
-- **Automated Project Setup**: Includes an initialization script
-  to automate the initial configuration and setup process.
+- **Automated Project Setup**: Includes an initialization script to automate the
+  initial configuration and setup process.
 - **Modular Workspaces**:
-  - **Frontend (Client)**: Built with Vue.js 3, Vite, and TypeScript. Includes Pinia
-    for state management and Vue Router for routing.
+  - **Frontend (Client)**: Built with Vue.js 3, Vite, and TypeScript. Includes
+    Pinia for state management and Vue Router for routing.
   - **Backend (Server)**: A lightweight Express.js server.
 - **Tooling**: Comes with ESLint and Prettier for code consistency, and Vitest
   and Playwright for comprehensive testing.
@@ -133,7 +134,8 @@ This template offers the following key features:
 Ensure you have the following installed:
 
 - [Git](https://git-scm.com/downloads) (version: 2.50.0 or higher recommended)
-- [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher recommended)
+- [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher
+  recommended)
 - [npm](https://www.npmjs.com/get-npm) (version: 10.9.0 or higher recommended)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (includes
   Docker Engine and Docker Compose)
@@ -143,6 +145,7 @@ Ensure you have the following installed:
 To initialize a new project based on this template, follow these steps.
 
 > [!NOTE]
+>
 > These steps are for creating a **new project**. If you want to contribute to
 > this template itself, please see the [Contributing](#contributing) section.
 
@@ -188,13 +191,16 @@ This script will guide you through the following:
   Compose files.
 
 > [!IMPORTANT]
+>
 > **Essential: Verify Project Setup**: After initialization, it is crucial to
 > review and **if necessary** adjust project documentation and configuration
 > files to align with your specific project requirements.
 
 > [!NOTE]
-> Install the [Renovate GitHub App](https://github.com/apps/renovate) if not already installed.
-> It will help you keep your dependencies up to date automatically.
+>
+> Install the [Renovate GitHub App](https://github.com/apps/renovate) if not
+> already installed. It will help you keep your dependencies up to date
+> automatically.
 
 ### Step 4: Install project dependencies
 
@@ -232,13 +238,15 @@ npm run dev
 
 ### Step 2: Access the application
 
-The application should be accessible in your web browser at [http://localhost:5173](http://localhost:5173).
+The application should be accessible in your web browser at
+[http://localhost:5173](http://localhost:5173).
 
 [⬆️ Go Back to Available Commands](#available-commands)
 
 ## Local Development (with Docker Compose)
 
 > [!CAUTION]
+>
 > The `compose.build.yml`, `compose.prod.yml`, `compose.test.yml`, and
 > `Dockerfile` for local development are currently **untested** and may/will not
 > work as expected. Use with caution.
@@ -268,7 +276,8 @@ docker compose --file compose.build.yml up --build --detach
 
 ### Step 3: Access the application
 
-The application should be accessible in your web browser at [http://localhost:5173](http://localhost:5173).
+The application should be accessible in your web browser at
+[http://localhost:5173](http://localhost:5173).
 
 [⬆️ Go Back to Available Commands](#available-commands)
 
@@ -347,17 +356,22 @@ then `markdown:lint` for all Markdown files.
 
 ## Contributing
 
-This repository serves as a template. If you want to contribute to the template's
-development, please follow these steps:
+This repository serves as a template. If you want to contribute to the
+template's development, please follow these steps:
 
 1. Fork the repository
-2. Clone your forked repository: `git clone https://github.com/your-username/npm-workspaces-template.git`
+2. Clone your forked repository:
+   `git clone https://github.com/your-username/npm-workspaces-template.git`
 3. Install the dependencies `npm ci`
 4. Create a new branch for your feature or bug fix
 5. Submit a pull request from your branch to our `main` branch
 
-For more detailed guidelines, please refer to the [CODE OF CONDUCT](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md), [CONTRIBUTING](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md),
-and [Code Style and Standards Guide](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md) files.
+For more detailed guidelines, please refer to the
+[CODE OF CONDUCT](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md),
+[CONTRIBUTING](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CONTRIBUTING.md),
+and
+[Code Style and Standards Guide](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md)
+files.
 
 [⬆️ Go Back to Getting Started](#getting-started)
 
@@ -373,14 +387,15 @@ information.
 No known issues at this time.
 
 If you discover a bug or experience an issue not listed here, please help us
-improve by [opening an issue on GitHub](https://github.com/homelab-alpha/npm-workspaces-template/issues/new/choose).
+improve by
+[opening an issue on GitHub](https://github.com/homelab-alpha/npm-workspaces-template/issues/new/choose).
 
 [⬆️ Go Back to Getting Started](#getting-started)
 
 ## Quick Installation
 
-Get started in seconds by running the command below in your terminal.
-This single command streamlines the setup process for you.
+Get started in seconds by running the command below in your terminal. This
+single command streamlines the setup process for you.
 
 This will:
 
@@ -398,7 +413,8 @@ This will:
 Ensure you have the following installed:
 
 - [Git](https://git-scm.com/downloads) (version: 2.50.0 or higher recommended)
-- [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher recommended)
+- [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher
+  recommended)
 - [npm](https://www.npmjs.com/get-npm) (version: 10.9.0 or higher recommended)
 - [Visual Studio Code](https://code.visualstudio.com/Download) (Optional)
 
@@ -471,13 +487,15 @@ npm run dev
 ```
 
 > [!TIP]
+>
 > After completing the Quick Installation, your browser should automatically
-> open to the application. You may need to refresh the page (using
-> **F5** or **Ctrl+R**) to ensure the latest content is loaded; or if you
-> encounter any issues, please open your web browser and navigate to
+> open to the application. You may need to refresh the page (using **F5** or
+> **Ctrl+R**) to ensure the latest content is loaded; or if you encounter any
+> issues, please open your web browser and navigate to
 > [http://localhost:5173](http://localhost:5173) manually.
 
 > [!NOTE]
+>
 > When using the **Quick Installation**, you may encounter extra logs at
 > `Opening application in browser at http://localhost:5173...` in the terminal.
 > These logs are from the browser and may include initial connection errors or
@@ -488,6 +506,8 @@ npm run dev
 
 ## License
 
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE) file for more details.
+This project is licensed under the **Apache License 2.0**. See the
+[LICENSE](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE)
+file for more details.
 
 [🔝 Go Back to Top](#npm-workspaces-template)
