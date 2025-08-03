@@ -27,16 +27,17 @@ consistent and easy to manage.
 We use **Prettier** and **ESLint** to automatically format and check our code.
 These tools ensure consistent style across the entire project.
 
-- **Indentation**: Always use **2 spaces** for indentation.
+- **Indentation**: Always use **2 spaces** for indentation (`tabWidth: 2`).
 - **Semicolons**: Always use semicolons at the end of statements (`semi: true`).
 - **Quotes**: Use **double quotes** (`"`) for strings (`singleQuote: false`).
 - **Line Length**: Code lines should not exceed **80 characters**
-  (`printWidth: 80`). For `.editorconfig` files, the maximum line length is
-  **100 characters** (`max_line_length = 100`).
+  (`printWidth: 80`).
 - **Trailing Commas**: Use trailing commas for ES5 compatible objects
   (`trailingComma: "es5"`).
 - **Bracket Spacing**: Include spaces inside object literals
   (`bracketSpacing: true`).
+- **Markdown Wrapping**: Wrap Markdown text at the specified line length
+  (`proseWrap: "always"`).
 - **Final Newline**: Ensure files end with a final newline
   (`insert_final_newline = true`).
 - **Trailing Whitespace**: Remove any whitespace at the end of lines
