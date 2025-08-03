@@ -15,17 +15,20 @@
     "client:dev": "npm run dev --workspace=client",
     "client:build": "npm run build --workspace=client",
     "client:format:check": "npm run format:check --workspace=client",
+    "client:format": "npm run format --workspace=client",
     "client:lint": "npm run lint --workspace=client",
     "server:dev": "npm run dev --workspace=server",
     "server:start": "npm run start --workspace=server",
     "server:format:check": "npm run format:check --workspace=server",
+    "server:format": "npm run format --workspace=server",
     "server:lint": "npm run lint --workspace=server",
+    "markdown:format:check": "prettier --check \"./*.md\"",
+    "markdown:format": "prettier --write \"./*.md\"",
     "dev": "run-p client:dev server:dev",
     "build": "npm run client:build",
-    "markdown:format:check": "markdownlint \"**/*.md\" --config \".markdownlint.jsonc\" --ignore \"**/node_modules/**\"",
-    "markdown:lint": "markdownlint \"**/*.md\" --fix --config \".markdownlint.jsonc\" --ignore \"**/node_modules/**\"",
     "format:check": "run-s client:format:check server:format:check markdown:format:check",
-    "lint": "run-s client:lint server:lint markdown:lint"
+    "format": "run-s client:format server:format markdown:format",
+    "lint": "run-s client:lint server:lint"
   },
   "repository": {
     "type": "git",
