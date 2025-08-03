@@ -17,7 +17,8 @@ services:
     security_opt:
       - no-new-privileges:true
     labels:
-      com.docker.compose.project: "NPM Workspaces Template"
-      com.npm-workspaces-template.description: "A boilerplate for NPM Workspaces"
+      com.docker.compose.project: "npm Workspaces Template"
+      com.npm-workspaces-template.description:
+        "A boilerplate for npm Workspaces"
     # volumes:
     #   - if needed
