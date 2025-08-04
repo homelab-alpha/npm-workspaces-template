@@ -13,7 +13,7 @@
   "rangeStrategy": "bump",
   "ignoreDeps": ["node"],
   "semanticCommits": "enabled",
-  "ignorePaths": ["docker/"],
+  "ignorePaths": ["docker/compose.prod.yml"],
   "packageRules": [
     {
       "matchUpdateTypes": ["major"],
