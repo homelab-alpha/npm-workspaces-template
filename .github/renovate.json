@@ -11,7 +11,7 @@
   ],
   "assignees": ["homelab-alpha"],
   "rangeStrategy": "bump",
-  "ignoreDeps": ["node"],
+  "ignoreDeps": [""],
   "semanticCommits": "enabled",
   "ignorePaths": ["docker/compose.prod.yml"],
   "packageRules": [
