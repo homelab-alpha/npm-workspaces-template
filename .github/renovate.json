@@ -16,6 +16,11 @@
   "ignorePaths": ["docker/compose.prod.yml"],
   "packageRules": [
     {
+      "matchDepTypes": ["engines"],
+      "matchPackageNames": ["node"],
+      "enabled": false
+    },
+    {
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "major"],
       "automerge": false,
