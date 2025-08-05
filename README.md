@@ -54,10 +54,10 @@ modular full-stack development.
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#fixing-code-style">Fixing Code Style</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#contributing">Contributing</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#quick-installation">Quick Installation</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites-1">Prerequisites</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#run-the-quick-script">Run the Quick script</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites-1">Prerequisites</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#run-the-quick-script">Run the Quick script</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
   </p>
 </details>
