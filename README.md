@@ -31,33 +31,32 @@ modular full-stack development.
     &nbsp;&nbsp;&nbsp; <a href="#getting-started">Getting Started</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites">Prerequisites</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#using-this-template">Using this Template</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-clone-the-repository">Step 1: Clone the repository</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-navigate-to-the-project-directory">Step 2: Navigate to the project directory</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-initialize-the-project">Step 3: Initialize the project</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-install-project-dependencies">Step 4: Install project dependencies</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-clone-the-repository">Step 1: Clone the repository</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-navigate-to-the-project-directory">Step 2: Navigate to the project directory</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-initialize-the-project">Step 3: Initialize the project</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-install-project-dependencies">Step 4: Install project dependencies</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#development">Development</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#available-commands">Available Commands</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#local-development-npm-only">Local Development (npm Only)</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-start-the-development-servers">Step 1: Start the development servers</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-access-the-application">Step 2: Access the application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#local-development-npm-only">Local Development (npm Only)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-start-the-development-servers">Step 1: Start the development servers</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-access-the-application">Step 2: Access the application</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#docker-and-docker-compose">Docker and Docker Compose</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#building-and-running-the-application">Building and Running the Application</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-docker-images">Step 1: Build Docker Images</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-application">Step 2: Start the Application</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-access-the-application">Step 3: Access the Application</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-stop-the-application-and-remove-the-container-and-network">Step 4: Stop the Application and remove the container and network</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#running-tests-with-docker-compose">Running Tests with Docker Compose</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-the-docker-image-and-run-the-tests-in-a-container">Step 1: Build the Docker image and run the tests in a container</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-clean-up-resources">Step 2: Clean up resources</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#building-and-running-the-application">Building and Running the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-docker-images">Step 1: Build Docker Images</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-application">Step 2: Start the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-access-the-application">Step 3: Access the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-stop-the-application-and-remove-the-container-and-network">Step 4: Stop the Application and remove the container and network</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#running-tests-with-docker-compose">Running Tests with Docker Compose</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-the-docker-image-and-run-the-tests-in-a-container">Step 1: Build the Docker image and run the tests in a container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-clean-up-resources">Step 2: Clean up resources</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#linting-and-formatting">Linting and Formatting</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#checking-code-style">Checking Code Style</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#fixing-code-style">Fixing Code Style</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#contributing">Contributing</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#currently-being-addressed">Currently Being Addressed</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#quick-installation">Quick Installation</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites-1">Prerequisites</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#run-the-quick-script">Run the Quick script</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#prerequisites-1">Prerequisites</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#run-the-quick-script">Run the Quick script</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
   </p>
 </details>
@@ -100,6 +99,8 @@ modular full-stack development.
 #### Documentation
 
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
+- [ ] Create an `ROADMAP.md`
+- [ ] Update the `CHANGELOG.md`
 
 ## Features
 
@@ -213,14 +214,6 @@ npm install
 Once the project is set up, you can use the following commands for development,
 testing, and deployment.
 
-### Available Commands
-
-- [Local Development (npm Only)](#local-development-npm-only)
-- [Docker and Docker Compose](#docker-and-docker-compose)
-- [Building and Running the Application](#building-and-running-the-application)
-- [Running Tests with Docker Compose](#running-tests-with-docker-compose)
-- [Linting and Formatting](#linting-and-formatting)
-
 ## Local Development (npm Only)
 
 To run the project directly on your machine:
@@ -238,8 +231,6 @@ npm run dev
 
 The application should be accessible in your web browser at
 [http://localhost:5173](http://localhost:5173).
-
-[⬆️ Go Back to Available Commands](#available-commands)
 
 ## Docker and Docker Compose
 
@@ -303,8 +294,6 @@ docker compose --file docker/compose.prod.yml down
 This command stops and removes the container and network, ensuring a clean state
 after use.
 
-[⬆️ Go Back to Available Commands](#available-commands)
-
 ### Running Tests with Docker Compose
 
 To execute the test suite inside a **Docker** container:
@@ -329,8 +318,6 @@ docker compose --file docker/compose.test.yml down
 
 This command stops and removes the container and network that were created by
 the `up` command, ensuring a clean state.
-
-[⬆️ Go Back to Available Commands](#available-commands)
 
 ## Linting and Formatting
 
@@ -359,8 +346,6 @@ npm run lint
 
 This command will run `lint` for both the `client` and `server` workspaces, and
 then `markdown:lint` for all Markdown files.
-
-[⬆️ Go Back to Available Commands](#available-commands)
 
 ## Contributing
 
@@ -509,8 +494,6 @@ npm run dev
 > These logs are from the browser and may include initial connection errors or
 > additional messages when attempting to open `http://localhost:5173`. This is
 > expected behavior, as the development server may not have fully started yet.
-
-[⬆️ Go Back to Available Commands](#available-commands)
 
 ## License
 
