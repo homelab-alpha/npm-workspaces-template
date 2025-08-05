@@ -50,6 +50,7 @@ modular full-stack development.
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-clean-up-resources">Step 2: Clean up resources</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#linting-and-formatting">Linting and Formatting</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#checking-code-style">Checking Code Style</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#format-code-style">Format Code Style</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#fixing-code-style">Fixing Code Style</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#contributing">Contributing</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#known-issues">Known Issues</a><br>
@@ -60,8 +61,6 @@ modular full-stack development.
     &nbsp;&nbsp;&nbsp; <a href="#license">License</a><br>
   </p>
 </details>
-
-<br />
 
 ## Project Progress
 
@@ -333,8 +332,8 @@ the `up` command, ensuring a clean state.
 
 ## Linting and Formatting
 
-This project uses **ESLint** for code linting, **Prettier** for code formatting,
-and **Markdownlint** for Markdown file linting.
+This project uses **ESLint** for code linting, **Prettier** for code and
+Markdown file linting.
 
 ### Checking Code Style
 
@@ -347,6 +346,18 @@ npm run format:check
 
 This command will run `format:check` for both the `client` and `server`
 workspaces, and then `markdown:format:check` for all Markdown files.
+
+### Format Code Style
+
+To automatically fix any linting and formatting issues across all workspaces and
+Markdown files:
+
+```bash
+npm run format
+```
+
+This command will run `format` for the `client` and `server` workspaces, and
+`markdown:format` for all Markdown files.
 
 ### Fixing Code Style
 
