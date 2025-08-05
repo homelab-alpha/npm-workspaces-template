@@ -1,7 +1,7 @@
 // Import necessary modules for ESLint configuration.
 import js from "@eslint/js";
+import vitestPlugin from "@vitest/eslint-plugin";
 import prettierConfig from "eslint-config-prettier";
-import jestPlugin from "eslint-plugin-jest";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -27,23 +27,16 @@ export default tseslint.config(
     },
   },
 
-  // Specific configuration for test files to include Jest globals and plugin rules.
+  // Apply Vitest recommended rules to test files.
+  // This ensures that Vitest-specific globals (like `describe`, `test`, `expect`)
+  // are recognized by ESLint and proper linting rules are applied.
   {
-    files: ["**/*.test.{js,mjs,ts,tsx}"], // Apply to test files.
+    files: ["**/*.test.{js,mjs,ts}"], // Apply to test files.
+    ...vitestPlugin.configs.recommended, // Apply recommended Vitest rules.
     languageOptions: {
       globals: {
-        ...globals.jest, // Enable Jest global variables (e.g., describe, test, expect).
+        ...globals.vitest, // Add Vitest global variables.
       },
-    },
-    plugins: {
-      jest: jestPlugin, // Register the Jest plugin.
-    },
-    rules: {
-      ...jestPlugin.configs.recommended.rules, // Apply recommended Jest rules.
-      // You can add or override specific Jest rules here if needed.
-      // For example:
-      // "jest/no-disabled-tests": "warn",
-      // "jest/no-focused-tests": "error",
     },
   },
 

@@ -4,6 +4,7 @@ function sum(a, b) {
 }
 
 // Describe the test suite for the 'sum' function.
+// Vitest uses `describe` and `test` similarly to Jest.
 describe("sum", () => {
   // Test case for adding two positive numbers.
   test("should add two positive numbers correctly", () => {
@@ -17,3 +18,8 @@ describe("sum", () => {
     expect(sum(5, -2)).toBe(3);
   });
 });
+
+// Export the sum function if it's part of a module that needs to be imported elsewhere.
+// In a real-world scenario, you would typically import the function from another file.
+// For this example, we define it in the same file for simplicity.
+export { sum };
