@@ -61,6 +61,8 @@ modular full-stack development.
   </p>
 </details>
 
+<br />
+
 ## Project Progress
 
 > [!WARNING]
@@ -102,6 +104,8 @@ modular full-stack development.
 - [ ] Create an `ROADMAP.md`
 - [ ] Update the `CHANGELOG.md`
 
+<br />
+
 ## Features
 
 This template offers the following key features:
@@ -126,6 +130,8 @@ This template offers the following key features:
   development.
 - **Minimal Config**: Designed for fast, straightforward project initialization.
 
+<br />
+
 ## Getting Started
 
 ### Prerequisites
@@ -148,7 +154,7 @@ To initialize a new project based on this template, follow these steps.
 > These steps are for creating a **new project**. If you want to contribute to
 > this template itself, please see the [Contributing](#contributing) section.
 
-### Step 1: Clone the repository
+#### Step 1: Clone the repository
 
 Open your terminal and run the following command:
 
@@ -156,7 +162,7 @@ Open your terminal and run the following command:
 git clone https://github.com/homelab-alpha/npm-workspaces-template.git
 ```
 
-### Step 2: Navigate to the project directory
+#### Step 2: Navigate to the project directory
 
 Change into the newly cloned project directory:
 
@@ -164,7 +170,7 @@ Change into the newly cloned project directory:
 cd npm-workspaces-template
 ```
 
-### Step 3: Initialize the project
+#### Step 3: Initialize the project
 
 > [!Note]
 >
@@ -201,7 +207,7 @@ This script will guide you through the following:
 > already installed. It will help you keep your dependencies up to date
 > automatically.
 
-### Step 4: Install project dependencies
+#### Step 4: Install project dependencies
 
 From the root directory of your project, install all required dependencies:
 
@@ -209,16 +215,18 @@ From the root directory of your project, install all required dependencies:
 npm install
 ```
 
+<br />
+
 ## Development
 
 Once the project is set up, you can use the following commands for development,
 testing, and deployment.
 
-## Local Development (npm Only)
+### Local Development (npm Only)
 
 To run the project directly on your machine:
 
-### Step 1: Start the development servers
+#### Step 1: Start the development servers
 
 This command will start both the client (**Vite**) and server (**Express.js**)
 in development mode.
@@ -227,10 +235,12 @@ in development mode.
 npm run dev
 ```
 
-### Step 2: Access the application
+#### Step 2: Access the application
 
 The application should be accessible in your web browser at
 [http://localhost:5173](http://localhost:5173).
+
+<br />
 
 ## Docker and Docker Compose
 
@@ -319,6 +329,8 @@ docker compose --file docker/compose.test.yml down
 This command stops and removes the container and network that were created by
 the `up` command, ensuring a clean state.
 
+<br />
+
 ## Linting and Formatting
 
 This project uses **ESLint** for code linting, **Prettier** for code formatting,
@@ -347,6 +359,8 @@ npm run lint
 This command will run `lint` for both the `client` and `server` workspaces, and
 then `markdown:lint` for all Markdown files.
 
+<br />
+
 ## Contributing
 
 This repository serves as a template. If you want to contribute to the
@@ -366,7 +380,7 @@ and
 [Code Style and Standards Guide](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md)
 files.
 
-[⬆️ Go Back to Getting Started](#getting-started)
+<br />
 
 ## Known Issues
 
@@ -383,7 +397,7 @@ If you discover a bug or experience an issue not listed here, please help us
 improve by
 [opening an issue on GitHub](https://github.com/homelab-alpha/npm-workspaces-template/issues/new/choose).
 
-[⬆️ Go Back to Getting Started](#getting-started)
+<br />
 
 ## Quick Installation
 
@@ -495,10 +509,10 @@ npm run dev
 > additional messages when attempting to open `http://localhost:5173`. This is
 > expected behavior, as the development server may not have fully started yet.
 
+<br />
+
 ## License
 
 This project is licensed under the **Apache License 2.0**. See the
 [LICENSE](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/LICENSE)
 file for more details.
-
-[🔝 Go Back to Top](#npm-workspaces-template)
