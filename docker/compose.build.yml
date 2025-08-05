@@ -3,14 +3,12 @@ services:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile
+      target: development
+    image: ghcr.io/homelab-alpha/npm-workspaces-template:0.1.0
     container_name: npm-workspaces-template-build
     ports:
       - "3210:3210"
+      - "5173:5173"
     environment:
-      NODE_ENV: production
-    volumes:
-      - ../client:/app/client
-      - ../server:/app/server
-      - ../package.json:/app/package.json
-      - ../package-lock.json:/app/package-lock.json
-      - /app/node_modules
+      NODE_ENV: development
+    command: npm run dev

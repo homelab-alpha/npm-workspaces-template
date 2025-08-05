@@ -5,6 +5,7 @@ services:
     pull_policy: if_not_present
     ports:
       - "3210:3210"
+      - "5173:5173"
     restart: unless-stopped
     healthcheck:
       disable: true
@@ -20,5 +21,3 @@ services:
       com.docker.compose.project: "npm Workspaces Template"
       com.npm-workspaces-template.description:
         "A boilerplate for npm Workspaces"
-    # volumes:
-    #   - if needed
