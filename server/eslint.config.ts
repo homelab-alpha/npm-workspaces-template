@@ -1,6 +1,7 @@
 // Import necessary modules for ESLint configuration.
 import js from "@eslint/js";
 import prettierConfig from "eslint-config-prettier";
+import jestPlugin from "eslint-plugin-jest";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -23,6 +24,26 @@ export default tseslint.config(
       globals: {
         ...globals.node, // Enable all Node.js global variables (e.g., `process`, `__dirname`).
       },
+    },
+  },
+
+  // Specific configuration for test files to include Jest globals and plugin rules.
+  {
+    files: ["**/*.test.{js,mjs,ts,tsx}"], // Apply to test files.
+    languageOptions: {
+      globals: {
+        ...globals.jest, // Enable Jest global variables (e.g., describe, test, expect).
+      },
+    },
+    plugins: {
+      jest: jestPlugin, // Register the Jest plugin.
+    },
+    rules: {
+      ...jestPlugin.configs.recommended.rules, // Apply recommended Jest rules.
+      // You can add or override specific Jest rules here if needed.
+      // For example:
+      // "jest/no-disabled-tests": "warn",
+      // "jest/no-focused-tests": "error",
     },
   },
 
