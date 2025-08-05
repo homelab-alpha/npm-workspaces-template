@@ -54,6 +54,6 @@
       "prettier --write"
     ],
     "**/*.{json,css,html,vue}": "prettier --write",
-    "**/*.md": "markdownlint --fix"
+    "*/*.md": "prettier --write"
   }
 }
