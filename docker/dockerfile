@@ -1,4 +1,5 @@
 # STAGE 1: Base & Dependencies
+# A base image with all dependencies installed.
 FROM node:22.18.0-slim AS base
 
 # Set the working directory.
@@ -26,28 +27,46 @@ FROM base AS builder
 RUN npm run build --workspace=client
 
 # STAGE 3: Production
+# This stage creates a lean image for production.
 FROM node:22.18.0-slim AS production
 
 # Set the working directory.
 WORKDIR /app
 
-# Copy the package.json files from the 'base' stage.
-COPY --from=base /app/package.json /app/package-lock.json* ./
+# Copy package.json files from the 'base' stage.
+COPY --from=base /app/package.json ./
+COPY --from=base /app/package-lock.json* ./
 COPY --from=base /app/client/package.json ./client/
 COPY --from=base /app/server/package.json ./server/
 
-# Install only the production dependencies to keep the image small.
+# Install only the production dependencies to minimize the image size.
 RUN npm ci --omit=dev
 
 # Copy the built client files from the 'builder' stage.
 COPY --from=builder /app/client/dist ./client/dist
 
-# Copy the server files.
+# Copy the server files from the 'builder' stage.
 COPY --from=builder /app/server ./server
 
-# Set the PORT environment variable. Adjust this if your server uses a different port.
+# Set the PORT environment variable.
 ENV PORT=3210
 EXPOSE 3210
 
 # The command to start the server.
-CMD [ "node", "server/index.js" ]
+CMD [ "npm", "run", "start", "--workspace=server" ]
+
+# STAGE 4: Test
+# This stage is specifically for running tests in an isolated environment.
+FROM base AS test
+
+# Define the command to run tests for the 'server' workspace.
+CMD [ "npm", "run", "test", "--workspace=server" ]
+
+# STAGE 5: Development
+# This stage is for local development with both client and server running.
+FROM base AS development
+
+# Define the command to start the development server for all workspaces.
+# The 'dev' script in the root package.json uses 'npm-run-all2' to
+# start both client and server simultaneously.
+CMD [ "npm", "run", "dev" ]
