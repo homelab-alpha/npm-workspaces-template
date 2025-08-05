@@ -13,8 +13,8 @@
 
 Welcome to the Homelab-Alpha npm Workspaces Template repository!
 
-This project is a boilerplate for Node.js projects using **npm workspaces**. It
-provides a structured setup with **client** and **server** workspaces for
+This project is a boilerplate for **Node.js** projects using **npm workspaces**.
+It provides a structured setup with **client** and **server** workspaces for
 modular full-stack development.
 
 <details>
@@ -40,16 +40,15 @@ modular full-stack development.
     &nbsp;&nbsp;&nbsp; <a href="#local-development-npm-only">Local Development (npm Only)</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-start-the-development-servers">Step 1: Start the development servers</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-access-the-application">Step 2: Access the application</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#local-development-with-docker-compose">Local Development (with Docker Compose)</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory">Step 1: Navigate to the `docker` directory</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-development-environment">Step 2: Start the development environment</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-access-the-application">Step 3: Access the application</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#running-tests-with-docker-compose">Running Tests (with Docker Compose)</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory-1">Step 1: Navigate to the `docker` directory</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-run-the-tests">Step 2: Run the tests</a><br>
-    &nbsp;&nbsp;&nbsp; <a href="#production-deployment-with-docker-compose">Production Deployment (with Docker Compose)</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-navigate-to-the-docker-directory-2">Step 1: Navigate to the `docker` directory</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-production-service">Step 2: Start the production service</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#docker-and-docker-compose">Docker and Docker Compose</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#building-and-running-the-application">Building and Running the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-docker-images">Step 1: Build Docker Images</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-start-the-application">Step 2: Start the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-3-access-the-application">Step 3: Access the Application</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-4-stop-the-application-and-remove-the-container-and-network">Step 4: Stop the Application and remove the container and network</a><br>
+    &nbsp;&nbsp;&nbsp; <a href="#running-tests-with-docker-compose">Running Tests with Docker Compose</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-1-build-the-docker-image-and-run-the-tests-in-a-container">Step 1: Build the Docker image and run the tests in a container</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#step-2-clean-up-resources">Step 2: Clean up resources</a><br>
     &nbsp;&nbsp;&nbsp; <a href="#linting-and-formatting">Linting and Formatting</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#checking-code-style">Checking Code Style</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#fixing-code-style">Fixing Code Style</a><br>
@@ -84,14 +83,15 @@ modular full-stack development.
 
 #### Docker
 
-- [x] Create base Dockerfile.
+- [x] Create base Dockerfile `docker/dockerfile`.
 - [x] Set up Docker Compose files:
-  - [x] `docker-compose.build.yml` for building.
-  - [x] `docker-compose.prod.yml` for production.
-  - [x] `docker-compose.test.yml` for testing.
-- [ ] Validate Dockerfile builds and functions correctly.
-- [ ] Test all Docker Compose files for intended behavior.
-- [ ] Implement and verify the full containerized build & deploy workflow.
+  - [x] `docker/compose.build.yml` for building.
+  - [x] `docker/compose.prod.yml` for production.
+  - [x] `docker/compose.test.yml` for testing.
+- [ ] Validate Dockerfile builds and functions correctly. (Currently under
+      review and testing)
+- [ ] Test all Docker Compose files for intended behavior. (Ongoing testing and
+      validation)
 
 #### Server
 
@@ -99,11 +99,7 @@ modular full-stack development.
 
 #### Documentation
 
-- [ ] Expand documentation for Docker setup, usage, and environment-specific
-      notes.
 - [ ] Remove the **Caution** notice once the project reaches a stable phase.
-- [ ] Remove the **Caution** notice once the **Docker & Containerization** setup
-      is fully functional.
 
 ## Features
 
@@ -113,18 +109,20 @@ This template offers the following key features:
 - **Automated Project Setup**: Includes an initialization script to automate the
   initial configuration and setup process.
 - **Modular Workspaces**:
-  - **Frontend (Client)**: Built with Vue.js 3, Vite, and TypeScript. Includes
-    Pinia for state management and Vue Router for routing.
-  - **Backend (Server)**: A lightweight Express.js server.
-- **Tooling**: Comes with ESLint and Prettier for code consistency, and Vitest
-  and Playwright for comprehensive testing.
-- **Docker Integration**: Containerized development and deployment with Docker
-  and Docker Compose.
-- **Multi-Stage Dockerfile**: Optimized Dockerfile for efficient builds and
+  - **Frontend (Client)**: Built with **Vue.js 3**, **Vite**, and
+    **TypeScript**. Includes **Pinia** for state management and **Vue Router**
+    for routing.
+  - **Backend (Server)**: A lightweight **Express.js** server.
+- **Tooling**: Comes with **ESLint** and **Prettier** for code consistency, and
+  **Vitest** and **Playwright** for comprehensive testing.
+- **Docker Integration**: Containerized development and deployment with
+  **Docker** and **Docker Compose**.
+- **Multi-Stage Dockerfile**: Optimized `Dockerfile` for efficient builds and
   smaller images.
 - **Environment-Specific Docker Compose**: Separate configurations for build,
   test, and production environments.
-- **Easy Setup**: Quickly get started with full-stack JavaScript development.
+- **Easy Setup**: Quickly get started with full-stack **JavaScript**
+  development.
 - **Minimal Config**: Designed for fast, straightforward project initialization.
 
 ## Getting Started
@@ -138,7 +136,7 @@ Ensure you have the following installed:
   recommended)
 - [npm](https://www.npmjs.com/get-npm) (version: 10.9.0 or higher recommended)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (includes
-  Docker Engine and Docker Compose)
+  **Docker Engine** and **Docker Compose**)
 
 ### Using this Template
 
@@ -218,19 +216,19 @@ testing, and deployment.
 ### Available Commands
 
 - [Local Development (npm Only)](#local-development-npm-only)
-- [Local Development (with Docker Compose)](#local-development-with-docker-compose)
-- [Running Tests (with Docker Compose)](#running-tests-with-docker-compose)
-- [Production Deployment (with Docker Compose)](#production-deployment-with-docker-compose)
+- [Docker and Docker Compose](#docker-and-docker-compose)
+- [Building and Running the Application](#building-and-running-the-application)
+- [Running Tests with Docker Compose](#running-tests-with-docker-compose)
 - [Linting and Formatting](#linting-and-formatting)
 
 ## Local Development (npm Only)
 
-To run the project directly on your machine without Docker:
+To run the project directly on your machine:
 
 ### Step 1: Start the development servers
 
-This command will start both the client (Vite) and server (Express.js) in
-development mode.
+This command will start both the client (**Vite**) and server (**Express.js**)
+in development mode.
 
 ```bash
 npm run dev
@@ -243,84 +241,94 @@ The application should be accessible in your web browser at
 
 [⬆️ Go Back to Available Commands](#available-commands)
 
-## Local Development (with Docker Compose)
+## Docker and Docker Compose
 
-> [!CAUTION]
+> [!IMPORTANT]
 >
-> The `compose.build.yml`, `compose.prod.yml`, `compose.test.yml`, and
-> `Dockerfile` for local development are currently **untested** and may/will not
-> work as expected. Use with caution.
+> The provided Docker configurations (`compose.build.yml`, `compose.prod.yml`,
+> `compose.test.yml`, and `Dockerfile`) are designed primarily for **local
+> development and testing**. Additional modifications may be necessary for a
+> full production deployment.
 
-To get the project up and running locally using Docker Compose for development:
+To get the project running locally using **Docker** and **Docker Compose**,
+follow these steps:
 
-### Step 1: Navigate to the `docker` directory
+### Building and Running the Application
 
-```bash
-cd docker
-```
+Follow the steps below to build Docker images and run the application in a local
+production-like environment.
 
-### Step 2: Start the development environment
+#### Step 1: Build Docker Images
 
-This command will build the Docker image (if it doesn't exist or changes are
-detected) and start the containers, mounting your local code for live reloading.
-
-```bash
-docker compose --file compose.build.yml up --build
-```
-
-Alternatively, for detached mode:
+Use the build configuration file to create the necessary images:
 
 ```bash
-docker compose --file compose.build.yml up --build --detach
+docker compose --file docker/compose.build.yml build
 ```
 
-### Step 3: Access the application
+#### Step 2: Start the Application
 
-The application should be accessible in your web browser at
-[http://localhost:5173](http://localhost:5173).
+Start the production containers using:
+
+```bash
+docker compose --file docker/compose.prod.yml up
+```
+
+To run the containers in the background (detached mode), use:
+
+```bash
+docker compose --file docker/compose.prod.yml up --detach
+```
+
+#### Step 3: Access the Application
+
+Once the containers are running, access the app at:
+
+[http://localhost:5173](http://localhost:5173)
+
+#### Step 4: Stop the Application and remove the container and network
+
+To stop containers running in the **foreground**, press `CTRL+C`, then run:
+
+```bash
+docker compose --file docker/compose.prod.yml down
+```
+
+For containers running in **detached mode**, just run:
+
+```bash
+docker compose --file docker/compose.prod.yml down
+```
+
+This command stops and removes the container and network, ensuring a clean state
+after use.
 
 [⬆️ Go Back to Available Commands](#available-commands)
 
-## Running Tests (with Docker Compose)
+### Running Tests with Docker Compose
 
-To execute project tests within a Docker container:
+To execute the test suite inside a **Docker** container:
 
-### Step 1: Navigate to the `docker` directory
-
-```bash
-cd docker
-```
-
-### Step 2: Run the tests
-
-This command will build the test image and execute the configured test command
-(e.g., `npm run test --workspace=server`). The container will exit after tests
-are complete.
+#### Step 1: Build the Docker image and run the tests in a container
 
 ```bash
-docker compose --file compose.test.yml up --build --abort-on-container-exit
+docker compose --file docker/compose.test.yml up --build --abort-on-container-exit
 ```
 
-[⬆️ Go Back to Available Commands](#available-commands)
+This command will build the test image, run the test command (e.g.,
+`npm run test --workspace=server`), and exit once the tests are complete.
 
-## Production Deployment (with Docker Compose)
+#### Step 2: Clean up resources
 
-For deploying the application using a pre-built image from a container registry:
-
-### Step 1: Navigate to the `docker` directory
+After the tests are completed, run the following command to remove the container
+service (`npm-workspaces-template-test`) and its network.
 
 ```bash
-cd docker
+docker compose --file docker/compose.test.yml down
 ```
 
-### Step 2: Start the production service
-
-This command will pull the specified Docker image (if not already present) and
-run it in production mode.
-
-```bash
-docker compose --file compose.prod.yml up --detach
-```
+This command stops and removes the container and network that were created by
+the `up` command, ensuring a clean state.
 
 [⬆️ Go Back to Available Commands](#available-commands)
 
@@ -410,7 +418,7 @@ This will:
 
 ### Prerequisites
 
-Ensure you have the following installed:
+You need the following installed for the quick installation:
 
 - [Git](https://git-scm.com/downloads) (version: 2.50.0 or higher recommended)
 - [Node.js](https://nodejs.org/en/download/) (version: 22.17.0 or higher
@@ -488,7 +496,7 @@ npm run dev
 
 > [!TIP]
 >
-> After completing the Quick Installation, your browser should automatically
+> After completing the **Quick Installation**, your browser should automatically
 > open to the application. You may need to refresh the page (using **F5** or
 > **Ctrl+R**) to ensure the latest content is loaded; or if you encounter any
 > issues, please open your web browser and navigate to
