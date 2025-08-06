@@ -171,10 +171,10 @@ cd npm-workspaces-template
 
 #### Step 3: Initialize the project
 
-> [!Note]
+> [!CAUTION]
 >
-> The initialization script is fully **functional**. New features and updates
-> will be introduced over time.
+> The `init.sh` script is designed exclusively for **Linux** environments.
+> Support for **macOS** and **Windows** is planned for a future release.
 
 Run the `init.sh` script to prepare the npm workspaces for your new project.
 This script handles the initial setup, including cleaning up template-specific
