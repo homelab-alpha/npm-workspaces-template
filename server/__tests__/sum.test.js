@@ -4,7 +4,6 @@ function sum(a, b) {
 }
 
 // Describe the test suite for the 'sum' function.
-// Vitest uses `describe` and `test` similarly to Jest.
 describe("sum", () => {
   // Test case for adding two positive numbers.
   test("should add two positive numbers correctly", () => {
