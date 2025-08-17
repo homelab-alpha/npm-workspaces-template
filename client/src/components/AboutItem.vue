@@ -27,4 +27,16 @@ h2 {
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }
+
+:slotted(strong) {
+  font-weight: bold;
+}
+
+:slotted(code) {
+  font-family: monospace;
+  color: var(--color-text);
+  background-color: var(--color-background-mute);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
 </style>
