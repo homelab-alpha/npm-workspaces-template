@@ -83,15 +83,7 @@ modular full-stack development.
 
 #### Docker
 
-- [x] Create base Dockerfile `docker/dockerfile`.
-- [x] Set up Docker Compose files:
-  - [x] `docker/compose.build.yml` for building.
-  - [x] `docker/compose.prod.yml` for production.
-  - [x] `docker/compose.test.yml` for testing.
-- [ ] Validate Dockerfile builds and functions correctly. (Currently under
-      review and testing)
-- [ ] Test all Docker Compose files for intended behavior. (Ongoing testing and
-      validation)
+- [ ] Pending tasks (to be defined).
 
 #### Server
 
