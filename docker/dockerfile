@@ -1,6 +1,6 @@
 # STAGE 1: Base & Dependencies
 # A base image with all dependencies installed.
-FROM node:22.21.0-slim AS base
+FROM node:24.10.0-slim AS base
 
 # Set the working directory.
 WORKDIR /app
@@ -28,7 +28,7 @@ RUN npm run build --workspace=client
 
 # STAGE 3: Production
 # This stage creates a lean image for production.
-FROM node:22.21.0-slim AS production
+FROM node:24.10.0-slim AS production
 
 # Set the working directory.
 WORKDIR /app
