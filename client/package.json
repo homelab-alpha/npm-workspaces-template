@@ -32,7 +32,7 @@
   "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme",
   "dependencies": {
     "pinia": "^3.0.4",
-    "vue": "^3.5.23",
+    "vue": "^3.5.24",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
-    "vite": "^7.2.1",
+    "vite": "^7.2.2",
     "vite-plugin-vue-devtools": "^8.0.3",
     "vitest": "^4.0.7",
     "vue-tsc": "^3.1.3"
