@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^4.0.16",
-    "@vitest/eslint-plugin": "^1.5.4",
+    "@vitest/eslint-plugin": "^1.6.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint": "^9.39.2",
     "globals": "^16.5.0",
