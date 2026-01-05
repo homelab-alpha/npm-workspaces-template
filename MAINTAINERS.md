@@ -109,7 +109,7 @@ maintainer roles with distinct responsibilities.
   project or for regular, day-to-day tasks.
 - **Responsibilities**:
   - Performing **code reviews** and merging pull requests.
-  - Implementing **bug fixes** and new features according to project guidelines.
+  - Implementing **bugfixes** and new features according to project guidelines.
   - **Maintaining and improving documentation**.
   - Managing **issues and discussions** in the community.
   - Contributing to the project's **testing** and quality assurance.
@@ -160,7 +160,7 @@ To ensure the project remains active and well-maintained, we expect all
 maintainers to show consistent engagement. We propose the following guidelines:
 
 - **Junior Maintainers**: Expected to contribute at least **one meaningful
-  contribution** (e.g., Pull Request review, bug fix, documentation update) per
+  contribution** (e.g., Pull Request review, bugfix, documentation update) per
   month. This helps in their learning and integration into the team.
   - A **meaningful contribution** is defined as an action that demonstrably adds
     value to the project, such as resolving a bug, adding a feature,
@@ -283,11 +283,7 @@ application to join the Homelab-Alpha team, we firmly believe that all
 contributions enrich our community. We encourage you to keep contributing and
 engaging with us, as every effort helps our project grow and thrive.
 
-[MAINTAINERS]:
-  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/MAINTAINERS.md
-[code of conduct]:
-  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md
-[CODEOWNERS]:
-  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/.github/CODEOWNERS
-[Security Policy]:
-  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/SECURITY.md
+[MAINTAINERS]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/MAINTAINERS.md
+[code of conduct]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md
+[CODEOWNERS]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/.github/CODEOWNERS
+[Security Policy]: https://github.com/homelab-alpha/npm-workspaces-template/blob/main/SECURITY.md
