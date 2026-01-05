@@ -8,6 +8,11 @@ recognized and valued.
 
 ## Becoming a Maintainer
 
+> [!NOTE]
+>
+> At this time, we are not accepting new Maintainers or Junior Maintainers. See
+> **“[Current Maintainers](#current-maintainers)”** for details.
+
 If you're interested in contributing to the project's long-term success by
 becoming a maintainer, you'll need to demonstrate a history of sustained and
 meaningful contributions. These contributions are crucial for showcasing your
@@ -127,6 +132,12 @@ maintainer roles with distinct responsibilities.
   - Actively **learning and developing** under mentorship.
 
 ## Current Maintainers
+
+> [!IMPORTANT]
+>
+> At this time, we are **not accepting new Maintainers or Junior Maintainers**.
+> Pull Requests to be added to the maintainer list will not be considered for
+> now. This decision may be revisited in the future.
 
 | Maintainer                                        | Role                |
 | :------------------------------------------------ | :------------------ |
