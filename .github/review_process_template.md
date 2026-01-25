@@ -35,7 +35,7 @@ our baseline quality requirements.
 
 - [ ] **Code Functionality:**
   - All **tests pass** locally, and new tests have been added for new features
-    or bug fixes where applicable.
+    or bugfixes where applicable.
   - The changes resolve the stated problem or correctly implement the intended
     feature.
   - The application (if applicable) runs as expected with the changes.

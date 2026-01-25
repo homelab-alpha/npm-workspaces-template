@@ -76,7 +76,7 @@ When you're working on something:
 2. Clone your forked repository:
    `git clone https://github.com/your-username/npm-workspaces-template.git`
 3. Install the dependencies `npm ci`
-4. Create a new branch for your feature or bug fix
+4. Create a new branch for your feature or bugfix
 5. Submit a pull request from your branch to our `main` branch
 
 ### Code and Style Guidelines
@@ -93,7 +93,7 @@ When you're working on something:
 - **Testing Guidelines**: When submitting code, please ensure it's
   **well-tested**. Include unit, integration, or end-to-end tests where
   appropriate to cover your changes and prevent regressions. If you're adding a
-  new feature, please include tests for its functionality. For bug fixes,
+  new feature, please include tests for its functionality. For bugfixes,
   consider adding a test that reproduces the bug before your fix, and then
   passes after the fix. Explain how you've tested your changes in your pull
   request description. If you've run specific commands to test, include them.
@@ -118,7 +118,7 @@ into **smaller, logical Pull Requests**.
 #### How to Break Down a Large PR
 
 1. **Identify Logical Units**: Look for parts of your change that can stand
-   independently. Think about a new feature, a bug fix, a refactoring of a
+   independently. Think about a new feature, a bugfix, a refactoring of a
    specific component, or a documentation update.
 2. **Create Separate Branches**: For each logical unit, create a new branch.
 3. **Submit Incremental PRs**: Submit PRs for each individual branch. Ensure

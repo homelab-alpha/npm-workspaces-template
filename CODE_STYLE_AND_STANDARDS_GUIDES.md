@@ -89,7 +89,7 @@ Name your branches to clearly describe their purpose.
 - **Case**: Use **lowercase** letters, separate words with **hyphens**.
 - **Prefixes (Types)**:
   - `feat/`: New features.
-  - `fix/`: Bug fixes.
+  - `fix/`: Bugfixes.
   - `docs/`: Documentation.
   - `refactor/`: Code restructuring.
   - `chore/`: General tasks.
@@ -121,7 +121,7 @@ Always write commit messages in **English**.
   - **Format**: `type(scope): brief subject`
   - **Types**:
     - `feat`: New feature.
-    - `fix`: Bug fix.
+    - `fix`: Bugfix.
     - `docs`: Documentation changes.
     - `style`: Code formatting (no logic change).
     - `refactor`: Code restructuring (no feature/fix).

@@ -19,7 +19,7 @@ receive security updates.
 |   Version    | Supported | Notes                                                                                                                                                          |
 | :----------: | :-------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |    Latest    |    Yes    | The `latest` version refers to the most recently tagged stable release (e.g., v1.0.0, v1.1.0). Only the most current stable release receives security updates. |
-| Above Latest |    No     | Versions newer than the latest official release (e.g., pre-release versions or untagged commits) are not officially supported for security updates.            |
+| Above Latest |    No     | Versions newer than the latest official release (e.g., prerelease versions or untagged commits) are not officially supported for security updates.             |
 | Below Latest |    No     | Older stable versions are not supported. Please upgrade to the `latest` version to receive security patches.                                                   |
 
 ## Reporting a Vulnerability

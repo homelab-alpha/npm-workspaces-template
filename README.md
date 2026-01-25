@@ -75,7 +75,7 @@ modular full-stack development.
 
 ### To-Do List
 
-- [ ] Create a final pre-release checklist.
+- [ ] Create a final prerelease checklist.
 
 #### Client
 
@@ -373,7 +373,7 @@ template's development, please follow these steps:
 2. Clone your forked repository:
    `git clone https://github.com/your-username/npm-workspaces-template.git`
 3. Install the dependencies `npm ci`
-4. Create a new branch for your feature or bug fix
+4. Create a new branch for your feature or bugfix
 5. Submit a pull request from your branch to our `main` branch
 
 For more detailed guidelines, please refer to the
