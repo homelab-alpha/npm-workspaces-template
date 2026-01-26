@@ -2,14 +2,14 @@
 
 [![Linting](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/linting.yml)
 [![CodeQL](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/homelab-alpha/npm-workspaces-template/actions/workflows/codeql.yml)
-[![Last commit](https://img.shields.io/github/last-commit/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Last%20commit&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/commits/main/)
-[![Repo Size](https://img.shields.io/github/repo-size/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Repo%20size&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/tree/main?tab=readme-ov-file#npm-workspaces-template)
-[![Changelog](https://img.shields.io/badge/Changelog-Keep%20a%20Changelog%20v1.1.0-313A41?style=flat&logo=keepachangelog&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CHANGELOG.md)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-313A41?style=flat&logo=contributorcovenant&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-313A41?style=flat&logo=conventionalcommits&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://conventionalcommits.org)
-[![Semantic Versioning](https://img.shields.io/badge/SemVer-2.0.0-313A41?style=flat&logo=semver&logoColor=96a1a9&&labelColor=313A41&color=BA935B)](https://github.com/semver/semver/blob/master/semver.md)
+[![Last commit](https://img.shields.io/github/last-commit/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Last%20commit&labelColor=313A41&color=3955CD&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/commits/main/)
+[![Repo Size](https://img.shields.io/github/repo-size/homelab-alpha/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Repo%20size&labelColor=313A41&color=3955CD&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/tree/main?tab=readme-ov-file#npm-workspaces-template)
+[![Changelog](https://img.shields.io/badge/Changelog-Keep%20a%20Changelog%20v1.1.0-313A41?style=flat&logo=keepachangelog&logoColor=96a1a9&&labelColor=313A41&color=3955CD)](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CHANGELOG.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-3.0-313A41?style=flat&logo=contributorcovenant&logoColor=96a1a9&&labelColor=313A41&color=3955CD)](https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-313A41?style=flat&logo=conventionalcommits&logoColor=96a1a9&&labelColor=313A41&color=3955CD)](https://conventionalcommits.org)
+[![Semantic Versioning](https://img.shields.io/badge/SemVer-2.0.0-313A41?style=flat&logo=semver&logoColor=96a1a9&&labelColor=313A41&color=3955CD)](https://github.com/semver/semver/blob/master/semver.md)
 
-<!-- [![Downloads](https://img.shields.io/github/downloads/homelab-alpha/npm-workspaces-template/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Downloads&labelColor=313A41&color=BA935B&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/releases) -->
+<!-- [![Downloads](https://img.shields.io/github/downloads/homelab-alpha/npm-workspaces-template/npm-workspaces-template?style=flat&logo=github&logoColor=96a1a9&label=Downloads&labelColor=313A41&color=3955CD&cacheSeconds=3600)](https://github.com/homelab-alpha/npm-workspaces-template/releases) -->
 
 Welcome to the Homelab-Alpha npm Workspaces Template repository!
 
