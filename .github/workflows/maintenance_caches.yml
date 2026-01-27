@@ -1,0 +1,67 @@
+name: Maintenance caches
+
+on:
+  schedule:
+    - cron: 0 3 * * 0
+
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  maintenance:
+    name: Remove old caches
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run cache cleanup
+        uses: actions/github-script@v8.0.0
+
+        with:
+          script: |
+            const DRY_RUN = false;
+            const maxAgeDays = 7;
+            const now = Date.now();
+
+            const caches = await github.paginate(
+              github.rest.actions.getActionsCacheList,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100,
+              }
+            );
+
+            console.log(`Found ${caches.length} caches`);
+            console.log(`Dry run mode: ${DRY_RUN ? "ENABLED" : "DISABLED"}`);
+
+            for (const cache of caches) {
+              const referenceDate =
+                cache.last_accessed_at || cache.created_at;
+
+              const ageDays =
+                (now - new Date(referenceDate).getTime()) /
+                (1000 * 60 * 60 * 24);
+
+              if (ageDays > maxAgeDays) {
+                if (DRY_RUN) {
+                  console.log(
+                    `[DRY RUN] Would delete cache ${cache.id} (age: ${ageDays.toFixed(
+                      1
+                    )} days)`
+                  );
+                } else {
+                  await github.rest.actions.deleteActionsCacheById({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    cache_id: cache.id,
+                  });
+
+                  console.log(
+                    `Deleted cache ${cache.id} (age: ${ageDays.toFixed(1)} days)`
+                  );
+                }
+              }
+            }
