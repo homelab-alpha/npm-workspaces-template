@@ -1,4 +1,5 @@
-name: Maintenance caches
+---
+name: Manage GitHub Caches
 
 on:
   schedule:
@@ -11,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  maintenance:
+  caches:
     name: Remove old caches
     runs-on: ubuntu-latest
 
