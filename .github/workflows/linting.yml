@@ -1,5 +1,5 @@
 ---
-name: Linting
+name: 🚨 Linting
 
 on:
   push:
@@ -14,25 +14,83 @@ permissions:
 
 jobs:
   lint:
-    name: Lint and Format Check
+    name: 🧹 Lint and Format Check
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 🏁 Notify start of process
+        run: |
+          echo "::notice title=Workflow started::🧹 Code quality checks initiated"
+          echo "::group::ℹ️ Execution context"
+          echo "Repository: ${{ github.repository }}"
+          echo "Workflow ref: ${{ github.ref }}"
+          echo "Node version: 24.13.0"
+          echo "::endgroup::"
+
+      - name: 📥 Checkout repository
         uses: actions/checkout@v6.0.2
 
-      - name: Set up Node.js
+      - name: ⚙️ Set up Node.js
         uses: actions/setup-node@v6.2.0
-
         with:
           node-version: 24.13.0
           cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci
+      - name: 📦 Install dependencies
+        run: |
+          echo "::group::📥 Installing npm packages"
+          npm ci
+          echo "::endgroup::"
 
-      - name: Run ESLint across all workspaces
-        run: npm run lint
+      - name: 🔍 Run ESLint across all workspaces
+        id: eslint
+        run: |
+          echo "::group::🧵 Running ESLint"
+          if ! npm run lint; then
+            echo "::error title=Linting Failed::❌ ESLint found violations in the codebase."
+            echo "::endgroup::"
+            exit 1
+          fi
+          echo "::endgroup::"
 
-      - name: Check formatting across all workspaces
-        run: npm run format:check
+      - name: 📐 Check formatting across all workspaces
+        id: format
+        run: |
+          echo "::group::✨ Checking Prettier formatting"
+          if ! npm run format:check; then
+            echo "::error title=Formatting Failed::❌ Prettier check failed. Run 'npm run format' locally."
+            echo "::endgroup::"
+            exit 1
+          fi
+          echo "::endgroup::"
+
+      - name: 📊 Generate job summary
+        if: always()
+        run: |
+          echo "::group::📊 Generating Summary Report"
+
+          LINT_STATUS="${{ steps.eslint.outcome == 'success' && '✅ Passed' || '❌ Failed' }}"
+          FORMAT_STATUS="${{ steps.format.outcome == 'success' && '✅ Passed' || '❌ Failed' }}"
+
+          cat <<EOF >> "$GITHUB_STEP_SUMMARY"
+          ## 🚨 Linting & Style Summary
+
+          Execution completed at: $(date -u)
+
+          ### 📈 quality Check Results
+          | Check | Status |
+          | :--- | :--- |
+          | 🧵 ESLint | $LINT_STATUS |
+          | ✨ Prettier | $FORMAT_STATUS |
+
+          ### ⚙️ Environment
+          - **Node Version:** 24.13.0
+          - **Runner:** ${{ runner.os }}
+          - **Workflow Run:** [View Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          ### 🧩 Remediation
+          - If **ESLint** failed: Run \`npm run lint:fix\` locally.
+          - If **Prettier** failed: Run \`npm run format\` locally.
+          EOF
+
+          echo "::endgroup::"
