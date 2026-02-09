@@ -1,5 +1,5 @@
 ---
-name: 🚨 Linting
+name: 🔍 Lint Repository
 
 on:
   push:
@@ -39,29 +39,35 @@ jobs:
       - name: 📦 Install dependencies
         run: |
           echo "::group::📥 Installing npm packages"
+
           npm ci
+
           echo "::endgroup::"
 
       - name: 🔍 Run ESLint across all workspaces
         id: eslint
         run: |
           echo "::group::🧵 Running ESLint"
+
           if ! npm run lint; then
             echo "::error title=Linting Failed::❌ ESLint found violations in the codebase."
             echo "::endgroup::"
             exit 1
           fi
+
           echo "::endgroup::"
 
       - name: 📐 Check formatting across all workspaces
         id: format
         run: |
           echo "::group::✨ Checking Prettier formatting"
+
           if ! npm run format:check; then
             echo "::error title=Formatting Failed::❌ Prettier check failed. Run 'npm run format' locally."
             echo "::endgroup::"
             exit 1
           fi
+
           echo "::endgroup::"
 
       - name: 📊 Generate job summary
@@ -78,17 +84,20 @@ jobs:
           Execution completed at: $(date -u)
 
           ### 📈 quality Check Results
+
           | Check | Status |
           | :--- | :--- |
           | 🧵 ESLint | $LINT_STATUS |
           | ✨ Prettier | $FORMAT_STATUS |
 
           ### ⚙️ Environment
+
           - **Node Version:** 24.13.0
           - **Runner:** ${{ runner.os }}
           - **Workflow Run:** [View Details](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
 
           ### 🧩 Remediation
+
           - If **ESLint** failed: Run \`npm run lint:fix\` locally.
           - If **Prettier** failed: Run \`npm run format\` locally.
           EOF
