@@ -57,6 +57,7 @@
     "*/*.md": "prettier --write"
   },
   "overrides": {
-    "glob": "^13.0.5"
+    "glob": "^13.0.5",
+    "ajv": "^8.18.0"
   }
 }
