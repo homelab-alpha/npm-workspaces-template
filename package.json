@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/homelab-alpha/npm-workspaces-template#readme",
   "devDependencies": {
-    "eslint": "^10.0.0",
+    "eslint": "^9.32.0",
     "lint-staged": "^16.2.7",
     "markdownlint-cli": "^0.47.0",
     "npm-run-all2": "^8.0.4",
@@ -57,7 +57,6 @@
     "*/*.md": "prettier --write"
   },
   "overrides": {
-    "glob": "^13.0.5",
-    "ajv": "^8.18.0"
+    "glob": "^13.0.5"
   }
 }
