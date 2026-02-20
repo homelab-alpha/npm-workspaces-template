@@ -58,6 +58,6 @@
   },
   "overrides": {
     "glob": "^13.0.6",
-    "minimatch": "^10.2.1"
+    "minimatch": "^10.2.2"
   }
 }
