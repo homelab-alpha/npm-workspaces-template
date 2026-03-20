@@ -34,6 +34,10 @@
   color: "ff5722"
   description: "Issue couldn't be reproduced"
 
+- name: "ci"
+  color: "00bcd4"
+  description: "Updates to CI/CD pipelines, GitHub Actions, or automation scripts"
+
 - name: "ci/cd"
   color: "00bcd4"
   description: "Issues related to Continuous Integration/Delivery"
@@ -54,7 +58,7 @@
   color: "9e9e9e"
   description: "Functionality marked as outdated or unsupported"
 
-- name: "dev"
+- name: "dev dependencies"
   color: "ffa500"
   description: "Updates related to devDependencies (development-only changes)"
 
