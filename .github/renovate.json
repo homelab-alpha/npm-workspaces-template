@@ -1,65 +1,49 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommits", ":rebaseStalePrs"],
   "dependencyDashboard": true,
-  "platformAutomerge": false,
-  "timezone": "Europe/Amsterdam",
-  "schedule": ["* 9-16 * * 1-7"],
-  "automergeSchedule": ["* 9-16 * * 1-5"],
-  "prHourlyLimit": 0,
+  "osvVulnerabilityAlerts": true,
+  "platformAutomerge": true,
   "prConcurrentLimit": 0,
-  "extends": ["config:recommended", ":automergePatch", ":rebaseStalePrs"],
-  "assignees": ["homelab-alpha"],
+  "prHourlyLimit": 0,
+  "timezone": "Europe/Amsterdam",
+  "schedule": ["after 9am and before 5pm"],
   "rangeStrategy": "bump",
   "ignoreDeps": [""],
-  "semanticCommits": "enabled",
   "ignorePaths": ["docker/compose.prod.yml"],
+  "assignees": ["homelab-alpha"],
+  "automergeSchedule": ["after 9am and before 5pm on weekdays"],
+  "automergeType": "squash",
   "packageRules": [
     {
-      "matchDepTypes": ["engines"],
-      "matchPackageNames": ["node"],
-      "enabled": false
+      "description": "Label updates based on type",
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "addLabels": ["{{{updateType}}}"]
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "major"],
-      "automerge": false,
-      "automergeType": "squash"
+      "description": "Automerge patch updates",
+      "matchUpdateTypes": ["patch", "digest", "pin"],
+      "automerge": true
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor"],
-      "labels": ["dependencies", "minor"],
-      "automerge": false,
-      "automergeType": "squash"
+      "description": "Manual review for non-patch updates",
+      "matchUpdateTypes": ["minor", "major"],
+      "automerge": false
     },
     {
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["patch"],
-      "labels": ["dependencies", "patch"],
-      "automerge": true,
-      "automergeType": "squash"
+      "description": "Group dependency labels",
+      "matchDepTypes": ["dependencies", "require"],
+      "addLabels": ["dependencies"]
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["dev", "dependencies", "major"],
-      "automerge": false,
-      "automergeType": "squash"
+      "description": "Group devDependency labels",
+      "matchDepTypes": ["devDependencies", "require-dev"],
+      "addLabels": ["dev dependencies"]
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor"],
-      "labels": ["dev", "dependencies", "minor"],
-      "automerge": false,
-      "automergeType": "squash"
-    },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["patch"],
-      "labels": ["dev", "dependencies", "patch"],
-      "automerge": false,
-      "automergeType": "squash"
+      "description": "Group CI/GitHub Action labels",
+      "matchDepTypes": ["action", "plugin"],
+      "addLabels": ["ci"]
     }
   ]
 }
