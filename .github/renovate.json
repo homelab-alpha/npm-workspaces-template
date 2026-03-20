@@ -46,8 +46,8 @@
     },
     {
       "description": "Keep Node.js on major version 22",
-      "matchPackagePatterns": ["^node$"],
-      "allowedVersions": "^22"
+      "allowedVersions": "^22",
+      "matchPackageNames": ["/^node$/"]
     }
   ]
 }
