@@ -3,7 +3,6 @@
   "extends": ["config:recommended", ":semanticCommits", ":rebaseStalePrs"],
   "dependencyDashboard": true,
   "osvVulnerabilityAlerts": true,
-  "platformAutomerge": true,
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
   "timezone": "Europe/Amsterdam",
@@ -15,39 +14,31 @@
   "automergeType": "squash",
   "packageRules": [
     {
-      "description": "Label updates based on type",
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "addLabels": ["{{{updateType}}}"]
-    },
-    {
-      "description": "Automerge patch updates",
-      "matchUpdateTypes": ["patch", "digest", "pin"],
-      "automerge": true
-    },
-    {
-      "description": "Manual review for non-patch updates",
-      "matchUpdateTypes": ["minor", "major"],
+      "description": "Never automerge major/minor",
+      "matchUpdateTypes": ["major", "minor"],
       "automerge": false
     },
     {
-      "description": "Group dependency labels",
-      "matchDepTypes": ["dependencies", "require"],
-      "addLabels": ["dependencies"]
-    },
-    {
-      "description": "Group devDependency labels",
-      "matchDepTypes": ["devDependencies", "require-dev"],
-      "addLabels": ["dev dependencies"]
-    },
-    {
-      "description": "Group CI/GitHub Action labels",
-      "matchDepTypes": ["action", "plugin"],
-      "addLabels": ["ci"]
+      "description": "Automerge patch updates",
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "platformAutomerge": true
     },
     {
       "description": "Keep Node.js on major version 22",
-      "allowedVersions": "^22",
-      "matchPackageNames": ["/^node$/"]
+      "matchPackageNames": ["node", "@types/node"],
+      "matchManagers": ["npm", "nodenv", "dockerfile"],
+      "allowedVersions": "^22.0.0"
+    },
+    {
+      "description": "Label updates based on type",
+      "matchUpdateTypes": ["major", "minor", "patch"],
+      "addLabels": ["{{{updateType}}}", "{{{depName}}}"]
+    },
+    {
+      "description": "Mark dev dependencies",
+      "matchDepTypes": ["devDependencies"],
+      "addLabels": ["dev dependencies"]
     }
   ]
 }
