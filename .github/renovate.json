@@ -9,7 +9,6 @@
   "timezone": "Europe/Amsterdam",
   "schedule": ["after 9am and before 5pm"],
   "rangeStrategy": "bump",
-  "ignoreDeps": [""],
   "ignorePaths": ["docker/compose.prod.yml"],
   "assignees": ["homelab-alpha"],
   "automergeSchedule": ["after 9am and before 5pm on weekdays"],
@@ -44,6 +43,11 @@
       "description": "Group CI/GitHub Action labels",
       "matchDepTypes": ["action", "plugin"],
       "addLabels": ["ci"]
+    },
+    {
+      "description": "Keep Node.js on major version 22",
+      "matchPackagePatterns": ["^node$"],
+      "allowedVersions": "^22"
     }
   ]
 }
