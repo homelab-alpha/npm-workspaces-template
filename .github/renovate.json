@@ -31,8 +31,19 @@
       "allowedVersions": "^22.0.0"
     },
     {
-      "description": "Label updates based on type",
-      "matchUpdateTypes": ["major", "minor", "patch"],
+      "description": "Label updates based on type and dependencie",
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch",
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
       "addLabels": ["{{{updateType}}}", "{{{depName}}}"]
     },
     {
