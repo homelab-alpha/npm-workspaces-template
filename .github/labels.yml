@@ -6,7 +6,7 @@
   color: "ff5722"
   description: "Authentic, unfiltered AI mess."
 
-- name: "auto-merge"
+- name: "automerge"
   color: "1e8b1e"
   description: "Automerge only if this label is applied"
 
@@ -34,10 +34,6 @@
   color: "ff5722"
   description: "Issue couldn't be reproduced"
 
-- name: "ci"
-  color: "00bcd4"
-  description: "Updates to CI/CD pipelines, GitHub Actions, or automation scripts"
-
 - name: "ci/cd"
   color: "00bcd4"
   description: "Issues related to Continuous Integration/Delivery"
@@ -58,7 +54,7 @@
   color: "9e9e9e"
   description: "Functionality marked as outdated or unsupported"
 
-- name: "dev dependencies"
+- name: "dev"
   color: "ffa500"
   description: "Updates related to devDependencies (development-only changes)"
 
@@ -81,6 +77,10 @@
 - name: "enhancement"
   color: "00bcd4"
   description: "New feature or request"
+
+- name: "eslint"
+  color: "4b32c3"
+  description: "Linting issues and configuration related to ESLint"
 
 - name: "external"
   color: "9c27b0"
@@ -113,6 +113,10 @@
 - name: "github-actions"
   color: "4caf50"
   description: "Automate, customize, and execute your software development"
+
+- name: "github/codeql-action"
+  color: "5319e7"
+  description: "Issues related to GitHub CodeQL analysis and code scanning workflows"
 
 - name: "go-mod"
   color: "6A076D"
@@ -177,6 +181,10 @@
 - name: "needs testing"
   color: "009688"
   description: "Requires additional testing"
+
+- name: "node"
+  color: "68a063"
+  description: "Issues or changes related to Node.js runtime, tooling, or ecosystem"
 
 - name: "P0: critical"
   color: "d32f2f"
