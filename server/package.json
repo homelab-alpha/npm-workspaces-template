@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": ">=npm@10.9.0",
   "engines": {
-    "node": "^22.22.1"
+    "node": "^22.22.2"
   },
   "scripts": {
     "dev": "node --watch index.js",
