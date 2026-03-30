@@ -187,7 +187,7 @@ anticipate your contributions!
 [Code of Conduct]:
   https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_OF_CONDUCT.md
 [AI Contribution Policy]:
-  https://github.com/homelab-alpha/template/blob/main/AI_CONTRIBUTION_POLICY.md
+  https://github.com/homelab-alpha/npm-workspaces-template/blob/main/AI_CONTRIBUTION_POLICY.md
 [Code Style + Standards Guides]:
   https://github.com/homelab-alpha/npm-workspaces-template/blob/main/CODE_STYLE_AND_STANDARDS_GUIDES.md
 [Discussions]:
